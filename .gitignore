@@ -1,0 +1,6 @@
+*.swo
+*.swn
+*.swp
+bin/*
+pkg/*
+.DS_Store

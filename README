@@ -1,0 +1,3 @@
+Future nice to haves:
+1. parse JS to figure out what polyfills are needed
+2. Think if we want to use ESbuild to bundle the polyfill (could cut down on size)
