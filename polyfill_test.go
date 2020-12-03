@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	polyfill "js-polyfill-server"
+	"js-polyfill-server/types"
 )
 
 var r []byte
@@ -17,7 +18,7 @@ func BenchmarkPolyfills(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		reader := c.Polyfills(
 			"Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)",
-			[]*polyfill.Polyfill{
+			[]*types.Polyfill{
 				polyfill.Array_prototype_forEach,
 				polyfill.Array_prototype_includes,
 				polyfill.Element_prototype_remove,

@@ -3,9 +3,12 @@ package polyfill
 import (
 	"errors"
 	"io"
-	"strconv"
+	"strings"
 
 	"github.com/ua-parser/uap-go/uaparser"
+
+	"js-polyfill-server/types"
+	"js-polyfill-server/version"
 )
 
 func New() *Composer {
@@ -18,28 +21,29 @@ type Composer struct {
 	uaParser *uaparser.Parser
 }
 
-func (c *Composer) parse(userAgent string) (browser Browser, majorVersion int, err error) {
+func (c *Composer) parse(userAgent string) (browser types.Browser, v version.Version, err error) {
+	// TODO(can we stick to just pulling out major/minor/patch and avoid this slow parse?)
 	ua := c.uaParser.ParseUserAgent(userAgent)
 	switch ua.Family {
 	case "Firefox":
-		browser = Firefox
+		browser = types.Firefox
 	case "Chrome":
-		browser = Chrome
+		browser = types.Chrome
 	case "Safari":
-		browser = Safari
+		browser = types.Safari
 	case "IE":
-		browser = IE
+		browser = types.IE
 	default:
 		err = errors.New("Unrecognized browser")
 		return
 	}
 
-	majorVersion, err = strconv.Atoi(ua.Major)
+	v, err = version.Parse(strings.Join([]string{ua.Major, ua.Minor}, "."))
 	return
 }
 
 func (c *Composer) PolyfillsByName(userAgent string, polyfills []string) (io.Reader, error) {
-	structs := make([]*Polyfill, len(polyfills))
+	structs := make([]*types.Polyfill, len(polyfills))
 	for i, p := range polyfills {
 		s, ok := polyfillsByName[p]
 		if !ok {
@@ -52,25 +56,26 @@ func (c *Composer) PolyfillsByName(userAgent string, polyfills []string) (io.Rea
 }
 
 func includeWithDeps(
-	p *Polyfill,
-	taken map[*Polyfill]struct{},
+	p *types.Polyfill,
+	taken map[*types.Polyfill]struct{},
 	codes []io.Reader,
-	needed func(p *Polyfill) bool,
+	needed func(p *types.Polyfill) bool,
 ) []io.Reader {
 	if _, ok := taken[p]; ok {
 		return codes
 	}
 	taken[p] = struct{}{}
-	for _, d := range p.deps {
+	p.ForEachDep(func(d *types.Polyfill) {
 		codes = includeWithDeps(d, taken, codes, needed)
-	}
+	})
 	if needed(p) {
 		codes = append(codes, p.Code())
 	}
 	return codes
 }
 
-func (c *Composer) Polyfills(userAgent string, polyfills []*Polyfill) io.Reader {
+func (c *Composer) Polyfills(userAgent string, polyfills []*types.Polyfill) io.Reader {
+	// TODO(dave): make this configurable
 	alwaysPolyfill := false
 	browser, version, err := c.parse(userAgent)
 	if err != nil {
@@ -79,11 +84,11 @@ func (c *Composer) Polyfills(userAgent string, polyfills []*Polyfill) io.Reader 
 
 	var codes []io.Reader
 
-	taken := map[*Polyfill]struct{}{}
+	taken := map[*types.Polyfill]struct{}{}
 
 	for _, poly := range polyfills {
 		codes = includeWithDeps(poly, taken, codes,
-			func(p *Polyfill) bool {
+			func(p *types.Polyfill) bool {
 				return alwaysPolyfill || p.Needed(browser, version)
 			})
 	}

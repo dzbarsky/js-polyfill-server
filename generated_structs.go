@@ -1,1909 +1,6983 @@
 package polyfill
-
-var AbortController = &Polyfill{
-	code: AbortController_Code,
-	deps: []*Polyfill{  Fetch,  Object_defineProperty,  Object_getOwnPropertyDescriptor,  Object_getPrototypeOf,  Object_setPrototypeOf,  Event,  Map,  Symbol,  Symbol_toStringTag,  WeakMap,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_from = &Polyfill{
-	code: Array_from_Code,
-	deps: []*Polyfill{  _ESAbstract_IsCallable,  _ESAbstract_CreateMethodProperty,  _ESAbstract_GetMethod,  Symbol_iterator,  _ESAbstract_IsConstructor,  _ESAbstract_Construct,  _ESAbstract_ArrayCreate,  _ESAbstract_GetIterator,  _ESAbstract_IteratorClose,  _ESAbstract_ToString,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_Call,  _ESAbstract_CreateDataPropertyOrThrow,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  Map,  Set,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_isArray = &Polyfill{
-	code: Array_isArray_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsArray,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_of = &Polyfill{
-	code: Array_of_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsConstructor,  _ESAbstract_Construct,  _ESAbstract_ArrayCreate,  _ESAbstract_ToString,  _ESAbstract_CreateDataPropertyOrThrow,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_ααiterator = &Polyfill{
-	code: Array_prototype_ααiterator_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  Array_prototype_values,  Symbol_iterator,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_copyWithin = &Polyfill{
-	code: Array_prototype_copyWithin_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_HasProperty,  _ESAbstract_ToInteger,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_entries = &Polyfill{
-	code: Array_prototype_entries_Code,
-	deps: []*Polyfill{  _ArrayIterator,  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_every = &Polyfill{
-	code: Array_prototype_every_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_ToBoolean,  _ESAbstract_Call,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_fill = &Polyfill{
-	code: Array_prototype_fill_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToInteger,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_filter = &Polyfill{
-	code: Array_prototype_filter_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ArraySpeciesCreate,  _ESAbstract_HasProperty,  _ESAbstract_ToBoolean,  _ESAbstract_Call,  _ESAbstract_CreateDataPropertyOrThrow,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_find = &Polyfill{
-	code: Array_prototype_find_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToBoolean,  _ESAbstract_Call,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_findIndex = &Polyfill{
-	code: Array_prototype_findIndex_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToBoolean,  _ESAbstract_Call,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_flat = &Polyfill{
-	code: Array_prototype_flat_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToInteger,  _ESAbstract_ArraySpeciesCreate,  _ESAbstract_FlattenIntoArray,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_flatMap = &Polyfill{
-	code: Array_prototype_flatMap_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ArraySpeciesCreate,  _ESAbstract_FlattenIntoArray,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_forEach = &Polyfill{
-	code: Array_prototype_forEach_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_HasProperty,  _ESAbstract_Call,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_includes = &Polyfill{
-	code: Array_prototype_includes_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToInteger,  _ESAbstract_SameValueZero,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_indexOf = &Polyfill{
-	code: Array_prototype_indexOf_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToInteger,  _ESAbstract_HasProperty,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_keys = &Polyfill{
-	code: Array_prototype_keys_Code,
-	deps: []*Polyfill{  _ArrayIterator,  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_lastIndexOf = &Polyfill{
-	code: Array_prototype_lastIndexOf_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToInteger,  _ESAbstract_HasProperty,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_map = &Polyfill{
-	code: Array_prototype_map_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ArraySpeciesCreate,  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_Call,  _ESAbstract_CreateDataPropertyOrThrow,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_reduce = &Polyfill{
-	code: Array_prototype_reduce_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_Call,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_reduceRight = &Polyfill{
-	code: Array_prototype_reduceRight_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_Call,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_some = &Polyfill{
-	code: Array_prototype_some_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_ToBoolean,  _ESAbstract_Call,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_sort = &Polyfill{
-	code: Array_prototype_sort_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsCallable,  Array_prototype_map,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Array_prototype_values = &Polyfill{
-	code: Array_prototype_values_Code,
-	deps: []*Polyfill{  _ArrayIterator,  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var AudioContext = &Polyfill{
-	code: AudioContext_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Blob = &Polyfill{
-	code: Blob_Code,
-	deps: []*Polyfill{  Atob,  URL,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var CSS_supports = &Polyfill{
-	code: CSS_supports_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var CustomEvent = &Polyfill{
-	code: CustomEvent_Code,
-	deps: []*Polyfill{  Event,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var DOMRect = &Polyfill{
-	code: DOMRect_Code,
-	deps: []*Polyfill{  Object_defineProperties,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var DOMTokenList = &Polyfill{
-	code: DOMTokenList_Code,
-	deps: []*Polyfill{  _DOMTokenList,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var DOMTokenList_prototype_ααiterator = &Polyfill{
-	code: DOMTokenList_prototype_ααiterator_Code,
-	deps: []*Polyfill{  _ArrayIterator,  Symbol_iterator,  DOMTokenList,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var DOMTokenList_prototype_forEach = &Polyfill{
-	code: DOMTokenList_prototype_forEach_Code,
-	deps: []*Polyfill{  DOMTokenList,  Array_prototype_forEach,  Element_prototype_classList,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var DOMTokenList_prototype_replace = &Polyfill{
-	code: DOMTokenList_prototype_replace_Code,
-	deps: []*Polyfill{  Element_prototype_classList,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Date_now = &Polyfill{
-	code: Date_now_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Date_prototype_toISOString = &Polyfill{
-	code: Date_prototype_toISOString_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var DocumentFragment = &Polyfill{
-	code: DocumentFragment_Code,
-	deps: []*Polyfill{  Object_create,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var DocumentFragment_prototype_append = &Polyfill{
-	code: DocumentFragment_prototype_append_Code,
-	deps: []*Polyfill{  Document,  DocumentFragment,  Element,  _mutation,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var DocumentFragment_prototype_prepend = &Polyfill{
-	code: DocumentFragment_prototype_prepend_Code,
-	deps: []*Polyfill{  Document,  DocumentFragment,  Element,  _mutation,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element = &Polyfill{
-	code: Element_Code,
-	deps: []*Polyfill{  Document,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_after = &Polyfill{
-	code: Element_prototype_after_Code,
-	deps: []*Polyfill{  Document,  Element,  Array_prototype_indexOf,  _mutation,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_append = &Polyfill{
-	code: Element_prototype_append_Code,
-	deps: []*Polyfill{  Document,  Element,  _mutation,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_before = &Polyfill{
-	code: Element_prototype_before_Code,
-	deps: []*Polyfill{  Document,  Element,  Array_prototype_indexOf,  _mutation,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_classList = &Polyfill{
-	code: Element_prototype_classList_Code,
-	deps: []*Polyfill{  DOMTokenList,  Element,  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_cloneNode = &Polyfill{
-	code: Element_prototype_cloneNode_Code,
-	deps: []*Polyfill{  Element,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_closest = &Polyfill{
-	code: Element_prototype_closest_Code,
-	deps: []*Polyfill{  Element_prototype_matches,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_dataset = &Polyfill{
-	code: Element_prototype_dataset_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Object_getOwnPropertyDescriptor,  Document_querySelector,  Element,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_inert = &Polyfill{
-	code: Element_prototype_inert_Code,
-	deps: []*Polyfill{  Array_prototype_forEach,  Element,  Element_prototype_matches,  Function_prototype_bind,  Map,  MutationObserver,  Node_prototype_contains,  Object_defineProperty,  Set,  WeakMap,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_matches = &Polyfill{
-	code: Element_prototype_matches_Code,
-	deps: []*Polyfill{  Element,  Document_querySelector,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_nextElementSibling = &Polyfill{
-	code: Element_prototype_nextElementSibling_Code,
-	deps: []*Polyfill{  Element,  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_placeholder = &Polyfill{
-	code: Element_prototype_placeholder_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Document_querySelector,  Element,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_prepend = &Polyfill{
-	code: Element_prototype_prepend_Code,
-	deps: []*Polyfill{  Document,  Element,  _mutation,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_previousElementSibling = &Polyfill{
-	code: Element_prototype_previousElementSibling_Code,
-	deps: []*Polyfill{  Element,  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_remove = &Polyfill{
-	code: Element_prototype_remove_Code,
-	deps: []*Polyfill{  Document,  Element,  _mutation,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_replaceWith = &Polyfill{
-	code: Element_prototype_replaceWith_Code,
-	deps: []*Polyfill{  Document,  Element,  _mutation,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Element_prototype_toggleAttribute = &Polyfill{
-	code: Element_prototype_toggleAttribute_Code,
-	deps: []*Polyfill{  Element,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Event = &Polyfill{
-	code: Event_Code,
-	deps: []*Polyfill{  Window,  Document,  Element,  Object_defineProperty,  Array_prototype_indexOf,  Array_prototype_includes,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Event_focusin = &Polyfill{
-	code: Event_focusin_Code,
-	deps: []*Polyfill{  Event,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Event_hashchange = &Polyfill{
-	code: Event_hashchange_Code,
-	deps: []*Polyfill{  Event,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var EventSource = &Polyfill{
-	code: EventSource_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Function_prototype_bind = &Polyfill{
-	code: Function_prototype_bind_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsCallable,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Function_prototype_name = &Polyfill{
-	code: Function_prototype_name_Code,
-	deps: []*Polyfill{  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var HTMLCanvasElement_prototype_toBlob = &Polyfill{
-	code: HTMLCanvasElement_prototype_toBlob_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _TypedArray,  Atob,  Blob,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var HTMLDocument = &Polyfill{
-	code: HTMLDocument_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var HTMLPictureElement = &Polyfill{
-	code: HTMLPictureElement_Code,
-	deps: []*Polyfill{  __html5_elements,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var HTMLTemplateElement = &Polyfill{
-	code: HTMLTemplateElement_Code,
-	deps: []*Polyfill{  DocumentFragment,  Document_querySelector,  Object_defineProperties,  Object_getOwnPropertyDescriptor,  Object_defineProperty,  Event,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var IntersectionObserver = &Polyfill{
-	code: IntersectionObserver_Code,
-	deps: []*Polyfill{  GetComputedStyle,  Array_isArray,  Array_prototype_filter,  Array_prototype_forEach,  Array_prototype_indexOf,  Array_prototype_map,  Array_prototype_some,  Event,  Function_prototype_bind,  Performance_now,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var IntersectionObserverEntry = &Polyfill{
-	code: IntersectionObserverEntry_Code,
-	deps: []*Polyfill{  IntersectionObserver,  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Intl_DateTimeFormat = &Polyfill{
-	code: Intl_DateTimeFormat_Code,
-	deps: []*Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Date_now,  Intl_getCanonicalLocales,  Intl_Locale,  Intl_NumberFormat,  Object_assign,  Object_create,  Object_keys,  Object_setPrototypeOf,  Set,  WeakMap,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Intl_DisplayNames = &Polyfill{
-	code: Intl_DisplayNames_Code,
-	deps: []*Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Intl_getCanonicalLocales,  Intl_Locale,  Object_assign,  Object_create,  Object_defineProperty,  Object_keys,  WeakMap,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Intl_ListFormat = &Polyfill{
-	code: Intl_ListFormat_Code,
-	deps: []*Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_forEach,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Intl_getCanonicalLocales,  Intl_Locale,  Object_assign,  Object_create,  Object_defineProperty,  Object_keys,  Object_setPrototypeOf,  WeakMap,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Intl_Locale = &Polyfill{
-	code: Intl_Locale_Code,
-	deps: []*Polyfill{  Array_prototype_filter,  Array_prototype_indexOf,  Array_prototype_reduce,  Array_prototype_sort,  Intl_getCanonicalLocales,  Object_assign,  Object_defineProperty,  Object_keys,  Set,  WeakMap,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Intl_NumberFormat = &Polyfill{
-	code: Intl_NumberFormat_Code,
-	deps: []*Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_forEach,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Intl_getCanonicalLocales,  Intl_Locale,  Intl_PluralRules,  Object_assign,  Object_create,  Object_defineProperty,  Object_keys,  Object_setPrototypeOf,  WeakMap,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Intl_PluralRules = &Polyfill{
-	code: Intl_PluralRules_Code,
-	deps: []*Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_forEach,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Intl_getCanonicalLocales,  Intl_Locale,  Object_assign,  Object_create,  Object_defineProperty,  Object_keys,  Object_setPrototypeOf,  WeakMap,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Intl_RelativeTimeFormat = &Polyfill{
-	code: Intl_RelativeTimeFormat_Code,
-	deps: []*Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_forEach,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Intl_getCanonicalLocales,  Intl_Locale,  Intl_NumberFormat,  Intl_PluralRules,  Object_assign,  Object_create,  Object_defineProperty,  Object_keys,  Object_setPrototypeOf,  WeakMap,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Intl_getCanonicalLocales = &Polyfill{
-	code: Intl_getCanonicalLocales_Code,
-	deps: []*Polyfill{  Array_prototype_filter,  Array_prototype_indexOf,  Array_prototype_reduce,  Array_prototype_sort,  Object_assign,  Object_defineProperty,  Object_keys,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var JSON = &Polyfill{
-	code: JSON_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Map = &Polyfill{
-	code: Map_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_CreateIterResultObject,  _ESAbstract_GetMethod,  _ESAbstract_GetIterator,  _ESAbstract_IsCallable,  _ESAbstract_IteratorClose,  _ESAbstract_IteratorComplete,  _ESAbstract_IteratorNext,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_OrdinaryCreateFromConstructor,  _ESAbstract_SameValueZero,  _ESAbstract_Type,  Array_isArray,  Symbol,  Symbol_iterator,  Symbol_species,  Object_create,  Object_defineProperty,  Object_isExtensible,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_acosh = &Polyfill{
-	code: Math_acosh_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_asinh = &Polyfill{
-	code: Math_asinh_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_atanh = &Polyfill{
-	code: Math_atanh_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_cbrt = &Polyfill{
-	code: Math_cbrt_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_clz32 = &Polyfill{
-	code: Math_clz32_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToUint32,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_cosh = &Polyfill{
-	code: Math_cosh_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_expm1 = &Polyfill{
-	code: Math_expm1_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_fround = &Polyfill{
-	code: Math_fround_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _TypedArray,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_hypot = &Polyfill{
-	code: Math_hypot_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_imul = &Polyfill{
-	code: Math_imul_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToUint32,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_log10 = &Polyfill{
-	code: Math_log10_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_log1p = &Polyfill{
-	code: Math_log1p_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_log2 = &Polyfill{
-	code: Math_log2_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_sign = &Polyfill{
-	code: Math_sign_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_sinh = &Polyfill{
-	code: Math_sinh_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_tanh = &Polyfill{
-	code: Math_tanh_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Math_trunc = &Polyfill{
-	code: Math_trunc_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var MutationObserver = &Polyfill{
-	code: MutationObserver_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Node_prototype_contains = &Polyfill{
-	code: Node_prototype_contains_Code,
-	deps: []*Polyfill{  Element,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var NodeList_prototype_ααiterator = &Polyfill{
-	code: NodeList_prototype_ααiterator_Code,
-	deps: []*Polyfill{  _ArrayIterator,  Symbol_iterator,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var NodeList_prototype_forEach = &Polyfill{
-	code: NodeList_prototype_forEach_Code,
-	deps: []*Polyfill{  Array_prototype_forEach,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Number_Epsilon = &Polyfill{
-	code: Number_Epsilon_Code,
-	deps: []*Polyfill{  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Number_MAX_SAFE_INTEGER = &Polyfill{
-	code: Number_MAX_SAFE_INTEGER_Code,
-	deps: []*Polyfill{  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Number_MIN_SAFE_INTEGER = &Polyfill{
-	code: Number_MIN_SAFE_INTEGER_Code,
-	deps: []*Polyfill{  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Number_isFinite = &Polyfill{
-	code: Number_isFinite_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Number_isInteger = &Polyfill{
-	code: Number_isInteger_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToInteger,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Number_isNaN = &Polyfill{
-	code: Number_isNaN_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Number_isSafeInteger = &Polyfill{
-	code: Number_isSafeInteger_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToInteger,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Number_parseFloat = &Polyfill{
-	code: Number_parseFloat_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  String_prototype_trim,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Number_parseInt = &Polyfill{
-	code: Number_parseInt_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  String_prototype_trim,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_assign = &Polyfill{
-	code: Object_assign_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Get,  _ESAbstract_ToObject,  Object_getOwnPropertyDescriptor,  Object_keys,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_create = &Polyfill{
-	code: Object_create_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  Object_defineProperties,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_defineProperties = &Polyfill{
-	code: Object_defineProperties_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Get,  _ESAbstract_ToObject,  _ESAbstract_Type,  Object_keys,  Object_getOwnPropertyDescriptor,  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_defineProperty = &Polyfill{
-	code: Object_defineProperty_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_entries = &Polyfill{
-	code: Object_entries_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_EnumerableOwnProperties,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_freeze = &Polyfill{
-	code: Object_freeze_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_fromEntries = &Polyfill{
-	code: Object_fromEntries_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToPropertyKey,  _ESAbstract_CreateDataPropertyOrThrow,  _ESAbstract_AddEntriesFromIterable,  Array_prototype_ααiterator,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_getOwnPropertyDescriptor = &Polyfill{
-	code: Object_getOwnPropertyDescriptor_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_HasOwnProperty,  _ESAbstract_ToObject,  _ESAbstract_ToPropertyKey,  _ESAbstract_Type,  Function_prototype_bind,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_getOwnPropertyDescriptors = &Polyfill{
-	code: Object_getOwnPropertyDescriptors_Code,
-	deps: []*Polyfill{  Object_getOwnPropertyDescriptor,  Object_defineProperty,  Reflect_ownKeys,  _ESAbstract_ToObject,  _ESAbstract_CreateMethodProperty,  _ESAbstract_CreateDataProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_getOwnPropertyNames = &Polyfill{
-	code: Object_getOwnPropertyNames_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  Object_keys,  Array_prototype_includes,  Array_prototype_indexOf,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_getPrototypeOf = &Polyfill{
-	code: Object_getPrototypeOf_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_is = &Polyfill{
-	code: Object_is_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_SameValue,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_isExtensible = &Polyfill{
-	code: Object_isExtensible_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_isFrozen = &Polyfill{
-	code: Object_isFrozen_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_isSealed = &Polyfill{
-	code: Object_isSealed_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_keys = &Polyfill{
-	code: Object_keys_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_preventExtensions = &Polyfill{
-	code: Object_preventExtensions_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_seal = &Polyfill{
-	code: Object_seal_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_setPrototypeOf = &Polyfill{
-	code: Object_setPrototypeOf_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  Array_prototype_forEach,  Object_create,  Object_defineProperty,  Object_getPrototypeOf,  Object_getOwnPropertyNames,  Object_getOwnPropertyDescriptor,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Object_values = &Polyfill{
-	code: Object_values_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  Array_prototype_map,  Object_defineProperty,  Object_keys,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Promise = &Polyfill{
-	code: Promise_Code,
-	deps: []*Polyfill{  Symbol_toStringTag,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Promise_prototype_finally = &Polyfill{
-	code: Promise_prototype_finally_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsCallable,  _ESAbstract_SpeciesConstructor,  Promise,  Function_prototype_bind,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect = &Polyfill{
-	code: Reflect_Code,
-	deps: []*Polyfill{  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_apply = &Polyfill{
-	code: Reflect_apply_Code,
-	deps: []*Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsCallable,  _ESAbstract_CreateListFromArrayLike,  _ESAbstract_Call,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_construct = &Polyfill{
-	code: Reflect_construct_Code,
-	deps: []*Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsConstructor,  _ESAbstract_CreateListFromArrayLike,  _ESAbstract_Construct,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_defineProperty = &Polyfill{
-	code: Reflect_defineProperty_Code,
-	deps: []*Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  _ESAbstract_ToPropertyDescriptor,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_deleteProperty = &Polyfill{
-	code: Reflect_deleteProperty_Code,
-	deps: []*Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  _ESAbstract_HasOwnProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_get = &Polyfill{
-	code: Reflect_get_Code,
-	deps: []*Polyfill{  Reflect,  _ESAbstract_Call,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  Object_getOwnPropertyDescriptor,  Object_getPrototypeOf,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_getOwnPropertyDescriptor = &Polyfill{
-	code: Reflect_getOwnPropertyDescriptor_Code,
-	deps: []*Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  Object_getOwnPropertyDescriptor,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_getPrototypeOf = &Polyfill{
-	code: Reflect_getPrototypeOf_Code,
-	deps: []*Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  Object_getPrototypeOf,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_has = &Polyfill{
-	code: Reflect_has_Code,
-	deps: []*Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  _ESAbstract_HasProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_isExtensible = &Polyfill{
-	code: Reflect_isExtensible_Code,
-	deps: []*Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  Object_isExtensible,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_ownKeys = &Polyfill{
-	code: Reflect_ownKeys_Code,
-	deps: []*Polyfill{  Reflect,  Symbol,  Object_getOwnPropertyNames,  _ESAbstract_Type,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_preventExtensions = &Polyfill{
-	code: Reflect_preventExtensions_Code,
-	deps: []*Polyfill{  Reflect,  Object_preventExtensions,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_set = &Polyfill{
-	code: Reflect_set_Code,
-	deps: []*Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  _ESAbstract_Call,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Reflect_setPrototypeOf = &Polyfill{
-	code: Reflect_setPrototypeOf_Code,
-	deps: []*Polyfill{  Reflect,  Reflect_getPrototypeOf,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  Object_setPrototypeOf,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var RegExp_prototype_flags = &Polyfill{
-	code: RegExp_prototype_flags_Code,
-	deps: []*Polyfill{  _ESAbstract_Get,  _ESAbstract_ToBoolean,  _ESAbstract_Type,  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var ResizeObserver = &Polyfill{
-	code: ResizeObserver_Code,
-	deps: []*Polyfill{  WeakMap,  MutationObserver,  RequestAnimationFrame,  DevicePixelRatio,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Set = &Polyfill{
-	code: Set_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_CreateIterResultObject,  _ESAbstract_GetMethod,  _ESAbstract_GetIterator,  _ESAbstract_IsCallable,  _ESAbstract_IteratorClose,  _ESAbstract_IteratorComplete,  _ESAbstract_IteratorNext,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_OrdinaryCreateFromConstructor,  _ESAbstract_SameValueZero,  Array_isArray,  Symbol,  Symbol_iterator,  Symbol_species,  Object_create,  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_fromCodePoint = &Polyfill{
-	code: String_fromCodePoint_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToNumber,  _ESAbstract_SameValue,  _ESAbstract_ToInteger,  _ESAbstract_IsArray,  _ESAbstract_UTF16Encoding,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_ααiterator = &Polyfill{
-	code: String_prototype_ααiterator_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _StringIterator,  Symbol_iterator,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_anchor = &Polyfill{
-	code: String_prototype_anchor_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_big = &Polyfill{
-	code: String_prototype_big_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_blink = &Polyfill{
-	code: String_prototype_blink_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_bold = &Polyfill{
-	code: String_prototype_bold_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_codePointAt = &Polyfill{
-	code: String_prototype_codePointAt_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_ToInteger,  _ESAbstract_UTF16Decode,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_endsWith = &Polyfill{
-	code: String_prototype_endsWith_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_IsRegExp,  _ESAbstract_ToInteger,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_fixed = &Polyfill{
-	code: String_prototype_fixed_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_fontcolor = &Polyfill{
-	code: String_prototype_fontcolor_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_fontsize = &Polyfill{
-	code: String_prototype_fontsize_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_includes = &Polyfill{
-	code: String_prototype_includes_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_IsRegExp,  _ESAbstract_ToInteger,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_italics = &Polyfill{
-	code: String_prototype_italics_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_link = &Polyfill{
-	code: String_prototype_link_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_normalize = &Polyfill{
-	code: String_prototype_normalize_Code,
-	deps: []*Polyfill{  Array_prototype_reduceRight,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_padEnd = &Polyfill{
-	code: String_prototype_padEnd_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_ToLength,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_padStart = &Polyfill{
-	code: String_prototype_padStart_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_ToLength,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_repeat = &Polyfill{
-	code: String_prototype_repeat_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToInteger,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_replaceAll = &Polyfill{
-	code: String_prototype_replaceAll_Code,
-	deps: []*Polyfill{  _ESAbstract_Call,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Get,  _ESAbstract_GetMethod,  _ESAbstract_GetSubstitution,  _ESAbstract_IsCallable,  _ESAbstract_IsRegExp,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_StringIndexOf,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_small = &Polyfill{
-	code: String_prototype_small_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_startsWith = &Polyfill{
-	code: String_prototype_startsWith_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_IsRegExp,  _ESAbstract_ToInteger,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_strike = &Polyfill{
-	code: String_prototype_strike_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_sub = &Polyfill{
-	code: String_prototype_sub_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_sup = &Polyfill{
-	code: String_prototype_sup_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_trim = &Polyfill{
-	code: String_prototype_trim_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_TrimString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_trimEnd = &Polyfill{
-	code: String_prototype_trimEnd_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_TrimString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_prototype_trimStart = &Polyfill{
-	code: String_prototype_trimStart_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_TrimString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var String_raw = &Polyfill{
-	code: String_raw_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_Get,  _ESAbstract_ToLength,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol = &Polyfill{
-	code: Symbol_Code,
-	deps: []*Polyfill{  Array_prototype_forEach,  Array_prototype_filter,  Array_prototype_map,  Object_create,  Object_defineProperty,  Object_getOwnPropertyNames,  Object_getOwnPropertyDescriptor,  Object_freeze,  Object_keys,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_asyncIterator = &Polyfill{
-	code: Symbol_asyncIterator_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_hasInstance = &Polyfill{
-	code: Symbol_hasInstance_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_isConcatSpreadable = &Polyfill{
-	code: Symbol_isConcatSpreadable_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_iterator = &Polyfill{
-	code: Symbol_iterator_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_match = &Polyfill{
-	code: Symbol_match_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_prototype_description = &Polyfill{
-	code: Symbol_prototype_description_Code,
-	deps: []*Polyfill{  Symbol,  Object_defineProperty,  String_prototype_trim,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_replace = &Polyfill{
-	code: Symbol_replace_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_search = &Polyfill{
-	code: Symbol_search_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_species = &Polyfill{
-	code: Symbol_species_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_split = &Polyfill{
-	code: Symbol_split_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_toPrimitive = &Polyfill{
-	code: Symbol_toPrimitive_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_toStringTag = &Polyfill{
-	code: Symbol_toStringTag_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Symbol_unscopables = &Polyfill{
-	code: Symbol_unscopables_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var TextEncoder = &Polyfill{
-	code: TextEncoder_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var URL = &Polyfill{
-	code: URL_Code,
-	deps: []*Polyfill{  Object_defineProperties,  Array_prototype_forEach,  Array_isArray,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var UserTiming = &Polyfill{
-	code: UserTiming_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var WeakMap = &Polyfill{
-	code: WeakMap_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_OrdinaryCreateFromConstructor,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_GetIterator,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_Call,  _ESAbstract_IteratorClose,  _ESAbstract_IsArray,  Object_defineProperty,  _ESAbstract_Type,  _ESAbstract_SameValue,  Symbol,  Array_isArray,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var WeakSet = &Polyfill{
-	code: WeakSet_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_OrdinaryCreateFromConstructor,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_GetIterator,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_Call,  _ESAbstract_IteratorClose,  _ESAbstract_IsArray,  Object_defineProperty,  _ESAbstract_Type,  _ESAbstract_SameValueZero,  Symbol,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var WebAnimations = &Polyfill{
-	code: WebAnimations_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Window = &Polyfill{
-	code: Window_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var XMLHttpRequest = &Polyfill{
-	code: XMLHttpRequest_Code,
-	deps: []*Polyfill{  Event,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ArrayIterator = &Polyfill{
-	code: _ArrayIterator_Code,
-	deps: []*Polyfill{  _Iterator,  Object_create,  Object_defineProperty,  Object_setPrototypeOf,  String_prototype_includes,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _DOMTokenList = &Polyfill{
-	code: _DOMTokenList_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Array_prototype_forEach,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_AddEntriesFromIterable = &Polyfill{
-	code: _ESAbstract_AddEntriesFromIterable_Code,
-	deps: []*Polyfill{  _ESAbstract_IsCallable,  _ESAbstract_GetIterator,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_IteratorClose,  _ESAbstract_Get,  _ESAbstract_Call,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ArrayCreate = &Polyfill{
-	code: _ESAbstract_ArrayCreate_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ArraySpeciesCreate = &Polyfill{
-	code: _ESAbstract_ArraySpeciesCreate_Code,
-	deps: []*Polyfill{  _ESAbstract_IsArray,  _ESAbstract_ArrayCreate,  _ESAbstract_Get,  _ESAbstract_Type,  _ESAbstract_IsConstructor,  _ESAbstract_Construct,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_Call = &Polyfill{
-	code: _ESAbstract_Call_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_CanonicalNumericIndexString = &Polyfill{
-	code: _ESAbstract_CanonicalNumericIndexString_Code,
-	deps: []*Polyfill{  _ESAbstract_SameValue,  _ESAbstract_ToNumber,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_Construct = &Polyfill{
-	code: _ESAbstract_Construct_Code,
-	deps: []*Polyfill{  _ESAbstract_IsConstructor,  _ESAbstract_OrdinaryCreateFromConstructor,  Function_prototype_bind,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_CreateDataProperty = &Polyfill{
-	code: _ESAbstract_CreateDataProperty_Code,
-	deps: []*Polyfill{  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_CreateDataPropertyOrThrow = &Polyfill{
-	code: _ESAbstract_CreateDataPropertyOrThrow_Code,
-	deps: []*Polyfill{  _ESAbstract_CreateDataProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_CreateHTML = &Polyfill{
-	code: _ESAbstract_CreateHTML_Code,
-	deps: []*Polyfill{  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_CreateIterResultObject = &Polyfill{
-	code: _ESAbstract_CreateIterResultObject_Code,
-	deps: []*Polyfill{  _ESAbstract_Type,  _ESAbstract_CreateDataProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_CreateListFromArrayLike = &Polyfill{
-	code: _ESAbstract_CreateListFromArrayLike_Code,
-	deps: []*Polyfill{  _ESAbstract_Type,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToString,  Array_prototype_includes,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_CreateMethodProperty = &Polyfill{
-	code: _ESAbstract_CreateMethodProperty_Code,
-	deps: []*Polyfill{  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_EnumerableOwnProperties = &Polyfill{
-	code: _ESAbstract_EnumerableOwnProperties_Code,
-	deps: []*Polyfill{  _ESAbstract_Get,  _ESAbstract_Type,  Object_getOwnPropertyDescriptor,  Object_keys,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_FlattenIntoArray = &Polyfill{
-	code: _ESAbstract_FlattenIntoArray_Code,
-	deps: []*Polyfill{  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_Get,  _ESAbstract_Call,  _ESAbstract_IsArray,  _ESAbstract_ToLength,  _ESAbstract_CreateDataPropertyOrThrow,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_Get = &Polyfill{
-	code: _ESAbstract_Get_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_GetIterator = &Polyfill{
-	code: _ESAbstract_GetIterator_Code,
-	deps: []*Polyfill{  _ESAbstract_Call,  _ESAbstract_GetMethod,  _ESAbstract_GetV,  _ESAbstract_Type,  Object_create,  Symbol_iterator,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_GetMethod = &Polyfill{
-	code: _ESAbstract_GetMethod_Code,
-	deps: []*Polyfill{  _ESAbstract_GetV,  _ESAbstract_IsCallable,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_GetPrototypeFromConstructor = &Polyfill{
-	code: _ESAbstract_GetPrototypeFromConstructor_Code,
-	deps: []*Polyfill{  _ESAbstract_Get,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_GetSubstitution = &Polyfill{
-	code: _ESAbstract_GetSubstitution_Code,
-	deps: []*Polyfill{  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_GetV = &Polyfill{
-	code: _ESAbstract_GetV_Code,
-	deps: []*Polyfill{  _ESAbstract_ToObject,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_HasOwnProperty = &Polyfill{
-	code: _ESAbstract_HasOwnProperty_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_HasProperty = &Polyfill{
-	code: _ESAbstract_HasProperty_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_Invoke = &Polyfill{
-	code: _ESAbstract_Invoke_Code,
-	deps: []*Polyfill{  _ESAbstract_Call,  _ESAbstract_GetV,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IsArray = &Polyfill{
-	code: _ESAbstract_IsArray_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IsCallable = &Polyfill{
-	code: _ESAbstract_IsCallable_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IsConstructor = &Polyfill{
-	code: _ESAbstract_IsConstructor_Code,
-	deps: []*Polyfill{  _ESAbstract_GetMethod,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IsInteger = &Polyfill{
-	code: _ESAbstract_IsInteger_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IsPropertyKey = &Polyfill{
-	code: _ESAbstract_IsPropertyKey_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IsRegExp = &Polyfill{
-	code: _ESAbstract_IsRegExp_Code,
-	deps: []*Polyfill{  _ESAbstract_Type,  _ESAbstract_ToBoolean,  _ESAbstract_Get,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IteratorClose = &Polyfill{
-	code: _ESAbstract_IteratorClose_Code,
-	deps: []*Polyfill{  _ESAbstract_Call,  _ESAbstract_GetMethod,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IteratorComplete = &Polyfill{
-	code: _ESAbstract_IteratorComplete_Code,
-	deps: []*Polyfill{  _ESAbstract_Type,  _ESAbstract_ToBoolean,  _ESAbstract_Get,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IteratorNext = &Polyfill{
-	code: _ESAbstract_IteratorNext_Code,
-	deps: []*Polyfill{  _ESAbstract_Type,  _ESAbstract_Call,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IteratorStep = &Polyfill{
-	code: _ESAbstract_IteratorStep_Code,
-	deps: []*Polyfill{  _ESAbstract_IteratorNext,  _ESAbstract_IteratorComplete,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_IteratorValue = &Polyfill{
-	code: _ESAbstract_IteratorValue_Code,
-	deps: []*Polyfill{  _ESAbstract_Get,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_OrdinaryCreateFromConstructor = &Polyfill{
-	code: _ESAbstract_OrdinaryCreateFromConstructor_Code,
-	deps: []*Polyfill{  _ESAbstract_GetPrototypeFromConstructor,  Object_create,  Object_defineProperty,  Object_getPrototypeOf,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_OrdinaryToPrimitive = &Polyfill{
-	code: _ESAbstract_OrdinaryToPrimitive_Code,
-	deps: []*Polyfill{  _ESAbstract_Call,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_RequireObjectCoercible = &Polyfill{
-	code: _ESAbstract_RequireObjectCoercible_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_SameValue = &Polyfill{
-	code: _ESAbstract_SameValue_Code,
-	deps: []*Polyfill{  _ESAbstract_SameValueNonNumber,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_SameValueNonNumber = &Polyfill{
-	code: _ESAbstract_SameValueNonNumber_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_SameValueZero = &Polyfill{
-	code: _ESAbstract_SameValueZero_Code,
-	deps: []*Polyfill{  _ESAbstract_SameValueNonNumber,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_SpeciesConstructor = &Polyfill{
-	code: _ESAbstract_SpeciesConstructor_Code,
-	deps: []*Polyfill{  _ESAbstract_Get,  _ESAbstract_IsConstructor,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_StringIndexOf = &Polyfill{
-	code: _ESAbstract_StringIndexOf_Code,
-	deps: []*Polyfill{  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToBoolean = &Polyfill{
-	code: _ESAbstract_ToBoolean_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToIndex = &Polyfill{
-	code: _ESAbstract_ToIndex_Code,
-	deps: []*Polyfill{  _ESAbstract_ToInteger,  _ESAbstract_ToLength,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToInt16 = &Polyfill{
-	code: _ESAbstract_ToInt16_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToInt32 = &Polyfill{
-	code: _ESAbstract_ToInt32_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToInt8 = &Polyfill{
-	code: _ESAbstract_ToInt8_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToInteger = &Polyfill{
-	code: _ESAbstract_ToInteger_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToLength = &Polyfill{
-	code: _ESAbstract_ToLength_Code,
-	deps: []*Polyfill{  _ESAbstract_ToInteger,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToNumber = &Polyfill{
-	code: _ESAbstract_ToNumber_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToObject = &Polyfill{
-	code: _ESAbstract_ToObject_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToPrimitive = &Polyfill{
-	code: _ESAbstract_ToPrimitive_Code,
-	deps: []*Polyfill{  _ESAbstract_Call,  _ESAbstract_GetMethod,  _ESAbstract_OrdinaryToPrimitive,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToPropertyDescriptor = &Polyfill{
-	code: _ESAbstract_ToPropertyDescriptor_Code,
-	deps: []*Polyfill{  _ESAbstract_Type,  _ESAbstract_HasProperty,  _ESAbstract_ToBoolean,  _ESAbstract_Get,  _ESAbstract_IsCallable,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToPropertyKey = &Polyfill{
-	code: _ESAbstract_ToPropertyKey_Code,
-	deps: []*Polyfill{  _ESAbstract_ToPrimitive,  _ESAbstract_ToString,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToString = &Polyfill{
-	code: _ESAbstract_ToString_Code,
-	deps: []*Polyfill{  _ESAbstract_ToPrimitive,  _ESAbstract_Type,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToUint16 = &Polyfill{
-	code: _ESAbstract_ToUint16_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToUint32 = &Polyfill{
-	code: _ESAbstract_ToUint32_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToUint8 = &Polyfill{
-	code: _ESAbstract_ToUint8_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_ToUint8Clamp = &Polyfill{
-	code: _ESAbstract_ToUint8Clamp_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_TrimString = &Polyfill{
-	code: _ESAbstract_TrimString_Code,
-	deps: []*Polyfill{  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_Type = &Polyfill{
-	code: _ESAbstract_Type_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_UTF16Decode = &Polyfill{
-	code: _ESAbstract_UTF16Decode_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _ESAbstract_UTF16Encoding = &Polyfill{
-	code: _ESAbstract_UTF16Encoding_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _Iterator = &Polyfill{
-	code: _Iterator_Code,
-	deps: []*Polyfill{  Function_prototype_bind,  Object_assign,  Object_defineProperties,  Object_defineProperty,  Symbol,  Symbol_iterator,  Symbol_toStringTag,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _StringIterator = &Polyfill{
-	code: _StringIterator_Code,
-	deps: []*Polyfill{  _Iterator,  Object_create,  Object_defineProperty,  Object_setPrototypeOf,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _TypedArray = &Polyfill{
-	code: _TypedArray_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var _mutation = &Polyfill{
-	code: _mutation_Code,
-	deps: []*Polyfill{  Document,  Element,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Atob = &Polyfill{
-	code: Atob_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console = &Polyfill{
-	code: Console_Code,
-	deps: []*Polyfill{  Window,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_assert = &Polyfill{
-	code: Console_assert_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_clear = &Polyfill{
-	code: Console_clear_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_count = &Polyfill{
-	code: Console_count_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_debug = &Polyfill{
-	code: Console_debug_Code,
-	deps: []*Polyfill{  Window,  Console,  Console_log,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_dir = &Polyfill{
-	code: Console_dir_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_dirxml = &Polyfill{
-	code: Console_dirxml_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_error = &Polyfill{
-	code: Console_error_Code,
-	deps: []*Polyfill{  Window,  Console,  Console_log,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_exception = &Polyfill{
-	code: Console_exception_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_group = &Polyfill{
-	code: Console_group_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_groupCollapsed = &Polyfill{
-	code: Console_groupCollapsed_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_groupEnd = &Polyfill{
-	code: Console_groupEnd_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_info = &Polyfill{
-	code: Console_info_Code,
-	deps: []*Polyfill{  Window,  Console,  Console_log,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_log = &Polyfill{
-	code: Console_log_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_markTimeline = &Polyfill{
-	code: Console_markTimeline_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_profile = &Polyfill{
-	code: Console_profile_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_profileEnd = &Polyfill{
-	code: Console_profileEnd_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_profiles = &Polyfill{
-	code: Console_profiles_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_table = &Polyfill{
-	code: Console_table_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_time = &Polyfill{
-	code: Console_time_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_timeEnd = &Polyfill{
-	code: Console_timeEnd_Code,
-	deps: []*Polyfill{  Window,  Console,  Console_time,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_timeStamp = &Polyfill{
-	code: Console_timeStamp_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_timeline = &Polyfill{
-	code: Console_timeline_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_timelineEnd = &Polyfill{
-	code: Console_timelineEnd_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_trace = &Polyfill{
-	code: Console_trace_Code,
-	deps: []*Polyfill{  Window,  Console,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Console_warn = &Polyfill{
-	code: Console_warn_Code,
-	deps: []*Polyfill{  Window,  Console,  Console_log,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var DevicePixelRatio = &Polyfill{
-	code: DevicePixelRatio_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Document = &Polyfill{
-	code: Document_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Document_currentScript = &Polyfill{
-	code: Document_currentScript_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Document_getElementsByClassName = &Polyfill{
-	code: Document_getElementsByClassName_Code,
-	deps: []*Polyfill{  Document_querySelector,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Document_head = &Polyfill{
-	code: Document_head_Code,
-	deps: []*Polyfill{  Document,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Document_querySelector = &Polyfill{
-	code: Document_querySelector_Code,
-	deps: []*Polyfill{  Element,  Document,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Document_visibilityState = &Polyfill{
-	code: Document_visibilityState_Code,
-	deps: []*Polyfill{  CustomEvent,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Fetch = &Polyfill{
-	code: Fetch_Code,
-	deps: []*Polyfill{  Array_prototype_forEach,  Object_getOwnPropertyNames,  Promise,  XMLHttpRequest,  Symbol_iterator,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var GetComputedStyle = &Polyfill{
-	code: GetComputedStyle_Code,
-	deps: []*Polyfill{  Window,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var GlobalThis = &Polyfill{
-	code: GlobalThis_Code,
-	deps: []*Polyfill{  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var LocalStorage = &Polyfill{
-	code: LocalStorage_Code,
-	deps: []*Polyfill{  Array_prototype_forEach,  Window,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Location_origin = &Polyfill{
-	code: Location_origin_Code,
-	deps: []*Polyfill{  Object_defineProperties,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var MatchMedia = &Polyfill{
-	code: MatchMedia_Code,
-	deps: []*Polyfill{  Event,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Navigator_geolocation = &Polyfill{
-	code: Navigator_geolocation_Code,
-	deps: []*Polyfill{  Document_head,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Navigator_sendBeacon = &Polyfill{
-	code: Navigator_sendBeacon_Code,
-	deps: []*Polyfill{  XMLHttpRequest,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Performance_now = &Polyfill{
-	code: Performance_now_Code,
-	deps: []*Polyfill{  Date_now,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var QueueMicrotask = &Polyfill{
-	code: QueueMicrotask_Code,
-	deps: []*Polyfill{  Promise,  Event,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var RequestAnimationFrame = &Polyfill{
-	code: RequestAnimationFrame_Code,
-	deps: []*Polyfill{  Date_now,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var RequestIdleCallback = &Polyfill{
-	code: RequestIdleCallback_Code,
-	deps: []*Polyfill{  Object_defineProperty,  Array_prototype_filter,  Array_prototype_includes,  RequestAnimationFrame,  Performance_now,  Event,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Screen_orientation = &Polyfill{
-	code: Screen_orientation_Code,
-	deps: []*Polyfill{  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var SetImmediate = &Polyfill{
-	code: SetImmediate_Code,
-	deps: []*Polyfill{  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var Smoothscroll = &Polyfill{
-	code: Smoothscroll_Code,
-	deps: []*Polyfill{  RequestAnimationFrame,  Function_prototype_bind,  GetComputedStyle,  Object_defineProperty,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var __html5_elements = &Polyfill{
-	code: __html5_elements_Code,
-	deps: []*Polyfill{  Document,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-var __viewport = &Polyfill{
-	code: __viewport_Code,
-	deps: []*Polyfill{  Object_defineProperties,  },
-	versions: LastVersionBeforeSupport{},
-}
-
-
-var polyfillsByName = map[string]*Polyfill{
+import "js-polyfill-server/version"
+import "js-polyfill-server/types"
+
+var AbortController = types.NewPolyfill(
+	 AbortController_Code,
+	 []*types.Polyfill{  Fetch,  Object_defineProperty,  Object_getOwnPropertyDescriptor,  Object_getPrototypeOf,  Object_setPrototypeOf,  Event,  Map,  Symbol,  Symbol_toStringTag,  WeakMap,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<67"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("65"))),
+		EdgeNeeded: version.Range(version.MakeGTE(version.MustParse("12"))).AND(version.MakeLTE(version.MustParse("15"))),
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("2"))).AND(version.MakeLTE(version.MustParse("56"))),
+		FirefoxMobileNeeded: version.MustParseRange("<64"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.Range(version.MakeGTE(version.MustParse("3.2"))).AND(version.MakeLTE(version.MustParse("11.2"))),
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("52"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("3.1"))).AND(version.MakeLTE(version.MustParse("12"))),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Array_from = types.NewPolyfill(
+	 Array_from_Code,
+	 []*types.Polyfill{  _ESAbstract_IsCallable,  _ESAbstract_CreateMethodProperty,  _ESAbstract_GetMethod,  Symbol_iterator,  _ESAbstract_IsConstructor,  _ESAbstract_Construct,  _ESAbstract_ArrayCreate,  _ESAbstract_GetIterator,  _ESAbstract_IteratorClose,  _ESAbstract_ToString,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_Call,  _ESAbstract_CreateDataPropertyOrThrow,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  Map,  Set,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<45"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("31"))),
+		FirefoxMobileNeeded: version.MustParseRange("<32"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<32"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Array_isArray = types.NewPolyfill(
+	 Array_isArray_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsArray,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MakeEqualsMajorMinor(version.MustParse("3.6")),
+		FirefoxMobileNeeded: version.MakeEqualsMajorMinor(version.MustParse("3.6")),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MakeEqualsMajor(version.MustParse("4")),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_of = types.NewPolyfill(
+	 Array_of_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsConstructor,  _ESAbstract_Construct,  _ESAbstract_ArrayCreate,  _ESAbstract_ToString,  _ESAbstract_CreateDataPropertyOrThrow,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<=44"),
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("24"))),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<32"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9.1"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Array_prototype_ααiterator = types.NewPolyfill(
+	 Array_prototype_ααiterator_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  Array_prototype_values,  Symbol_iterator,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5.1"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<38"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Array_prototype_copyWithin = types.NewPolyfill(
+	 Array_prototype_copyWithin_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_HasProperty,  _ESAbstract_ToInteger,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<45"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<32"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.MustParseRange("<32"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_prototype_entries = types.NewPolyfill(
+	 Array_prototype_entries_Code,
+	 []*types.Polyfill{  _ArrayIterator,  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5.1"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<38"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<7.1"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Array_prototype_every = types.NewPolyfill(
+	 Array_prototype_every_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_ToBoolean,  _ESAbstract_Call,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_prototype_fill = types.NewPolyfill(
+	 Array_prototype_fill_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToInteger,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("< 45"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("< 31"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<= 7"),
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<= 7"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Array_prototype_filter = types.NewPolyfill(
+	 Array_prototype_filter_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ArraySpeciesCreate,  _ESAbstract_HasProperty,  _ESAbstract_ToBoolean,  _ESAbstract_Call,  _ESAbstract_CreateDataPropertyOrThrow,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.MustParseRange("<9"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_prototype_find = types.NewPolyfill(
+	 Array_prototype_find_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToBoolean,  _ESAbstract_Call,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<=45"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<24"),
+		FirefoxMobileNeeded: version.MustParseRange("<24"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.MustParseRange("<8.0"),
+		IOSSafariNeeded: version.MustParseRange("<8.0"),
+		OperaNeeded: version.MustParseRange("<32"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<8.0"),
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var Array_prototype_findIndex = types.NewPolyfill(
+	 Array_prototype_findIndex_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToBoolean,  _ESAbstract_Call,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("10"))),
+		ChromeNeeded: version.MustParseRange("<45"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("3.6"))).AND(version.MakeLTE(version.MustParse("24"))),
+		FirefoxMobileNeeded: version.Range(version.MakeGTE(version.MustParse("3.6"))).AND(version.MakeLTE(version.MustParse("24"))),
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("8.0"))),
+		IOSSafariNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("8.0"))),
+		OperaNeeded: version.MustParseRange("<32"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("7.1"))),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Array_prototype_flat = types.NewPolyfill(
+	 Array_prototype_flat_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToInteger,  _ESAbstract_ArraySpeciesCreate,  _ESAbstract_FlattenIntoArray,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<69"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<62"),
+		FirefoxMobileNeeded: version.MustParseRange("<62"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.MustParseRange("<12"),
+		IOSSafariNeeded: version.MustParseRange("<12"),
+		OperaNeeded: version.MustParseRange("<56"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<12"),
+		SamsungMobileNeeded: version.MustParseRange("<10"),
+	},
+)
+
+var Array_prototype_flatMap = types.NewPolyfill(
+	 Array_prototype_flatMap_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ArraySpeciesCreate,  _ESAbstract_FlattenIntoArray,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("< 69"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("< 62"),
+		FirefoxMobileNeeded: version.MustParseRange("< 62"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.MustParseRange("< 12"),
+		IOSSafariNeeded: version.MustParseRange("< 12"),
+		OperaNeeded: version.MustParseRange("< 56"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("< 12"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Array_prototype_forEach = types.NewPolyfill(
+	 Array_prototype_forEach_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_HasProperty,  _ESAbstract_Call,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_prototype_includes = types.NewPolyfill(
+	 Array_prototype_includes_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToInteger,  _ESAbstract_SameValueZero,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<47"),
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.MustParseRange("<43"),
+		FirefoxMobileNeeded: version.MustParseRange("<43"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<34"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Array_prototype_indexOf = types.NewPolyfill(
+	 Array_prototype_indexOf_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToInteger,  _ESAbstract_HasProperty,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_prototype_keys = types.NewPolyfill(
+	 Array_prototype_keys_Code,
+	 []*types.Polyfill{  _ArrayIterator,  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5.1"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<38"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<7.1"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Array_prototype_lastIndexOf = types.NewPolyfill(
+	 Array_prototype_lastIndexOf_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToInteger,  _ESAbstract_HasProperty,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_prototype_map = types.NewPolyfill(
+	 Array_prototype_map_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ArraySpeciesCreate,  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_Call,  _ESAbstract_CreateDataPropertyOrThrow,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_prototype_reduce = types.NewPolyfill(
+	 Array_prototype_reduce_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_Call,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_prototype_reduceRight = types.NewPolyfill(
+	 Array_prototype_reduceRight_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_Call,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_prototype_some = types.NewPolyfill(
+	 Array_prototype_some_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_ToBoolean,  _ESAbstract_Call,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Array_prototype_sort = types.NewPolyfill(
+	 Array_prototype_sort_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsCallable,  Array_prototype_map,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<70"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<70"),
+		EdgeNeeded: version.MustParseRange("<79"),
+		EdgeMobileNeeded: version.MustParseRange("<79"),
+		FirefoxNeeded: version.MustParseRange("<3"),
+		FirefoxMobileNeeded: version.MustParseRange("<3"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<10.3"),
+		OperaNeeded: version.MustParseRange("<57"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10.1"),
+		SamsungMobileNeeded: version.MustParseRange("<10"),
+	},
+)
+
+var Array_prototype_values = types.NewPolyfill(
+	 Array_prototype_values_Code,
+	 []*types.Polyfill{  _ArrayIterator,  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<66"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<60"),
+		FirefoxMobileNeeded: version.MustParseRange("<60"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<53"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var AudioContext = types.NewPolyfill(
+	 AudioContext_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.None,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Blob = types.NewPolyfill(
+	 Blob_Code,
+	 []*types.Polyfill{  Atob,  URL,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<20"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<13"),
+		FirefoxMobileNeeded: version.MustParseRange("<14"),
+		IENeeded: version.MustParseRange("<10"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.MustParseRange("<12"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<6"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var CSS_supports = types.NewPolyfill(
+	 CSS_supports_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<4.4"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<=27"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<=21"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9.0"),
+		OperaNeeded: version.MustParseRange("<15"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var CustomEvent = types.NewPolyfill(
+	 CustomEvent_Code,
+	 []*types.Polyfill{  Event,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<=4.3"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("14"))),
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("10"))),
+		FirefoxMobileNeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("10"))),
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("11.5"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("7"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var DOMRect = types.NewPolyfill(
+	 DOMRect_Code,
+	 []*types.Polyfill{  Object_defineProperties,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<6"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<60"),
+		EdgeNeeded: version.MustParseRange("<79"),
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<=30"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.MustParseRange("<10.1"),
+		IOSSafariNeeded: version.MustParseRange("<10.1"),
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10.1"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var DOMTokenList = types.NewPolyfill(
+	 DOMTokenList_Code,
+	 []*types.Polyfill{  _DOMTokenList,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("6.0"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var DOMTokenList_prototype_ααiterator = types.NewPolyfill(
+	 DOMTokenList_prototype_ααiterator_Code,
+	 []*types.Polyfill{  _ArrayIterator,  Symbol_iterator,  DOMTokenList,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<50"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<50"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.MakeLTE(version.MustParse("12"))),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.MakeLTE(version.MustParse("12"))),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.MustParseRange("<50"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var DOMTokenList_prototype_forEach = types.NewPolyfill(
+	 DOMTokenList_prototype_forEach_Code,
+	 []*types.Polyfill{  DOMTokenList,  Array_prototype_forEach,  Element_prototype_classList,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<45"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<42"),
+		EdgeNeeded: version.MustParseRange("<16"),
+		EdgeMobileNeeded: version.MustParseRange("<16"),
+		FirefoxNeeded: version.MustParseRange("<50"),
+		FirefoxMobileNeeded: version.MustParseRange("<50"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<10.3"),
+		OperaNeeded: version.MustParseRange("<32"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10.1"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var DOMTokenList_prototype_replace = types.NewPolyfill(
+	 DOMTokenList_prototype_replace_Code,
+	 []*types.Polyfill{  Element_prototype_classList,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<67"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<67"),
+		EdgeNeeded: version.MustParseRange("<18"),
+		EdgeMobileNeeded: version.MustParseRange("<18"),
+		FirefoxNeeded: version.MustParseRange("<61"),
+		FirefoxMobileNeeded: version.MustParseRange("<61"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<12"),
+		OperaNeeded: version.MustParseRange("<54"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<12"),
+		SamsungMobileNeeded: version.MustParseRange("<9"),
+	},
+)
+
+var Date_now = types.NewPolyfill(
+	 Date_now_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.MustParseRange("<9"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Date_prototype_toISOString = types.NewPolyfill(
+	 Date_prototype_toISOString_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.MustParseRange("<9"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var DocumentFragment = types.NewPolyfill(
+	 DocumentFragment_Code,
+	 []*types.Polyfill{  Object_create,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<3"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<4"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("8"))).AND(version.MakeLTE(version.MustParse("9"))),
+		IEMobileNeeded: version.MustParseRange("<9"),
+		IOSChromeNeeded: version.MustParseRange("<4"),
+		IOSSafariNeeded: version.MustParseRange("<4"),
+		OperaNeeded: version.MustParseRange("<11"),
+		OperaMiniNeeded: version.MustParseRange("<11"),
+		SafariNeeded: version.MustParseRange("<4"),
+		SamsungMobileNeeded: version.MustParseRange("<3"),
+	},
+)
+
+var DocumentFragment_prototype_append = types.NewPolyfill(
+	 DocumentFragment_prototype_append_Code,
+	 []*types.Polyfill{  Document,  DocumentFragment,  Element,  _mutation,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<54"),
+		EdgeNeeded: version.MustParseRange("<17"),
+		EdgeMobileNeeded: version.MustParseRange("<17"),
+		FirefoxNeeded: version.MustParseRange("<49"),
+		FirefoxMobileNeeded: version.MustParseRange("<49"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("8"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<39"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var DocumentFragment_prototype_prepend = types.NewPolyfill(
+	 DocumentFragment_prototype_prepend_Code,
+	 []*types.Polyfill{  Document,  DocumentFragment,  Element,  _mutation,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<54"),
+		EdgeNeeded: version.MustParseRange("<17"),
+		EdgeMobileNeeded: version.MustParseRange("<17"),
+		FirefoxNeeded: version.MustParseRange("<49"),
+		FirefoxMobileNeeded: version.MustParseRange("<49"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("8"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<39"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var Element = types.NewPolyfill(
+	 Element_Code,
+	 []*types.Polyfill{  Document,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_after = types.NewPolyfill(
+	 Element_prototype_after_Code,
+	 []*types.Polyfill{  Document,  Element,  Array_prototype_indexOf,  _mutation,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<54"),
+		EdgeNeeded: version.MustParseRange("<17"),
+		EdgeMobileNeeded: version.MustParseRange("<17"),
+		FirefoxNeeded: version.MustParseRange("<49"),
+		FirefoxMobileNeeded: version.MustParseRange("<49"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<39"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var Element_prototype_append = types.NewPolyfill(
+	 Element_prototype_append_Code,
+	 []*types.Polyfill{  Document,  Element,  _mutation,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<54"),
+		EdgeNeeded: version.MustParseRange("<17"),
+		EdgeMobileNeeded: version.MustParseRange("<17"),
+		FirefoxNeeded: version.MustParseRange("<49"),
+		FirefoxMobileNeeded: version.MustParseRange("<49"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<39"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var Element_prototype_before = types.NewPolyfill(
+	 Element_prototype_before_Code,
+	 []*types.Polyfill{  Document,  Element,  Array_prototype_indexOf,  _mutation,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<54"),
+		EdgeNeeded: version.MustParseRange("<17"),
+		EdgeMobileNeeded: version.MustParseRange("<17"),
+		FirefoxNeeded: version.MustParseRange("<49"),
+		FirefoxMobileNeeded: version.MustParseRange("<49"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<39"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var Element_prototype_classList = types.NewPolyfill(
+	 Element_prototype_classList_Code,
+	 []*types.Polyfill{  DOMTokenList,  Element,  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("8"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("4.1"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_cloneNode = types.NewPolyfill(
+	 Element_prototype_cloneNode_Code,
+	 []*types.Polyfill{  Element,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<30"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.MakeEqualsMajor(version.MustParse("8")),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_closest = types.NewPolyfill(
+	 Element_prototype_closest_Code,
+	 []*types.Polyfill{  Element_prototype_matches,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<41"),
+		EdgeNeeded: version.MustParseRange("<15"),
+		EdgeMobileNeeded: version.MustParseRange("<15"),
+		FirefoxNeeded: version.MustParseRange("<35"),
+		FirefoxMobileNeeded: version.MustParseRange("<35"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<28"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_dataset = types.NewPolyfill(
+	 Element_prototype_dataset_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Object_getOwnPropertyDescriptor,  Document_querySelector,  Element,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("< 8"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("< 6"),
+		FirefoxMobileNeeded: version.MustParseRange("< 6"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.MakeLTE(version.MustParse("10"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("< 6"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_inert = types.NewPolyfill(
+	 Element_prototype_inert_Code,
+	 []*types.Polyfill{  Array_prototype_forEach,  Element,  Element_prototype_matches,  Function_prototype_bind,  Map,  MutationObserver,  Node_prototype_contains,  Object_defineProperty,  Set,  WeakMap,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_matches = types.NewPolyfill(
+	 Element_prototype_matches_Code,
+	 []*types.Polyfill{  Element,  Document_querySelector,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("4.4.4"))),
+		BBNeeded: version.All,
+		ChromeNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("33"))),
+		EdgeNeeded: version.MustParseRange("<18"),
+		EdgeMobileNeeded: version.MustParseRange("<18"),
+		FirefoxNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("33"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("7"))),
+		OperaNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("20"))),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("7.0"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_nextElementSibling = types.NewPolyfill(
+	 Element_prototype_nextElementSibling_Code,
+	 []*types.Polyfill{  Element,  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<4"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<3.5"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<9"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.MustParseRange("<10"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<4"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_placeholder = types.NewPolyfill(
+	 Element_prototype_placeholder_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Document_querySelector,  Element,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("8"))).AND(version.MakeLTE(version.MustParse("9"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_prepend = types.NewPolyfill(
+	 Element_prototype_prepend_Code,
+	 []*types.Polyfill{  Document,  Element,  _mutation,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<54"),
+		EdgeNeeded: version.MustParseRange("<17"),
+		EdgeMobileNeeded: version.MustParseRange("<17"),
+		FirefoxNeeded: version.MustParseRange("<49"),
+		FirefoxMobileNeeded: version.MustParseRange("<49"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<39"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var Element_prototype_previousElementSibling = types.NewPolyfill(
+	 Element_prototype_previousElementSibling_Code,
+	 []*types.Polyfill{  Element,  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<4"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<3.5"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<9"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.MustParseRange("<10"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<4"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_remove = types.NewPolyfill(
+	 Element_prototype_remove_Code,
+	 []*types.Polyfill{  Document,  Element,  _mutation,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("28"))),
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.MustParseRange("<45"),
+		FirefoxMobileNeeded: version.Range(version.MakeGTE(version.MustParse("3.6"))).AND(version.All),
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("15"))),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9.1"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Element_prototype_replaceWith = types.NewPolyfill(
+	 Element_prototype_replaceWith_Code,
+	 []*types.Polyfill{  Document,  Element,  _mutation,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<54"),
+		EdgeNeeded: version.MustParseRange("<17"),
+		EdgeMobileNeeded: version.MustParseRange("<17"),
+		FirefoxNeeded: version.MustParseRange("<49"),
+		FirefoxMobileNeeded: version.MustParseRange("<49"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<39"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var Element_prototype_toggleAttribute = types.NewPolyfill(
+	 Element_prototype_toggleAttribute_Code,
+	 []*types.Polyfill{  Element,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<69"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<69"),
+		EdgeNeeded: version.MustParseRange("<18"),
+		EdgeMobileNeeded: version.MustParseRange("<18"),
+		FirefoxNeeded: version.MustParseRange("<63"),
+		FirefoxMobileNeeded: version.MustParseRange("<63"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.MustParseRange("<12"),
+		IOSSafariNeeded: version.MustParseRange("<12"),
+		OperaNeeded: version.MustParseRange("<56"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<12"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Event = types.NewPolyfill(
+	 Event_Code,
+	 []*types.Polyfill{  Window,  Document,  Element,  Object_defineProperty,  Array_prototype_indexOf,  Array_prototype_includes,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("10"))),
+		FirefoxMobileNeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("10"))),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IEMobileNeeded: version.MakeEqualsMajor(version.MustParse("10")),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("11.5"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("7"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Event_focusin = types.NewPolyfill(
+	 Event_focusin_Code,
+	 []*types.Polyfill{  Event,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<52"),
+		FirefoxMobileNeeded: version.MustParseRange("<52"),
+		IENeeded: version.None,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Event_hashchange = types.NewPolyfill(
+	 Event_hashchange_Code,
+	 []*types.Polyfill{  Event,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<55"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<51"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("7"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MakeEqualsMajor(version.MustParse("4")),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var EventSource = types.NewPolyfill(
+	 EventSource_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<4.4"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<26"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<36"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.MustParseRange("<12"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<7"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Function_prototype_bind = types.NewPolyfill(
+	 Function_prototype_bind_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsCallable,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MakeEqualsMajorMinor(version.MustParse("3.6")),
+		FirefoxMobileNeeded: version.MakeEqualsMajorMinor(version.MustParse("3.6")),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<=5"),
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("5.1"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Function_prototype_name = types.NewPolyfill(
+	 Function_prototype_name_Code,
+	 []*types.Polyfill{  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<15"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var HTMLCanvasElement_prototype_toBlob = types.NewPolyfill(
+	 HTMLCanvasElement_prototype_toBlob_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _TypedArray,  Atob,  Blob,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<50"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<19"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.MustParseRange(">=10"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<11"),
+		OperaNeeded: version.MustParseRange("<37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<11"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var HTMLDocument = types.NewPolyfill(
+	 HTMLDocument_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.MakeEqualsMajor(version.MustParse("9")),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var HTMLPictureElement = types.NewPolyfill(
+	 HTMLPictureElement_Code,
+	 []*types.Polyfill{  __html5_elements,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<52"),
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("7"))).AND(version.MakeLTE(version.MustParse("10"))),
+		ChromeNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("38"))),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("37"))),
+		FirefoxMobileNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("37"))),
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("9.2"))),
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("11.6"))).AND(version.MakeLTE(version.MustParse("29"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("9"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var HTMLTemplateElement = types.NewPolyfill(
+	 HTMLTemplateElement_Code,
+	 []*types.Polyfill{  DocumentFragment,  Document_querySelector,  Object_defineProperties,  Object_getOwnPropertyDescriptor,  Object_defineProperty,  Event,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<67"),
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("7"))).AND(version.MakeLTE(version.MustParse("10"))),
+		ChromeNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("26"))),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("22"))),
+		FirefoxMobileNeeded: version.MustParseRange("<67"),
+		IENeeded: version.MakeEqualsMajor(version.MustParse("11")),
+		IEMobileNeeded: version.MakeEqualsMajor(version.MustParse("11")),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("8"))),
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("22"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var IntersectionObserver = types.NewPolyfill(
+	 IntersectionObserver_Code,
+	 []*types.Polyfill{  GetComputedStyle,  Array_isArray,  Array_prototype_filter,  Array_prototype_forEach,  Array_prototype_indexOf,  Array_prototype_map,  Array_prototype_some,  Event,  Function_prototype_bind,  Performance_now,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("< 51"),
+		EdgeNeeded: version.MustParseRange("< 16"),
+		EdgeMobileNeeded: version.MustParseRange("< 16"),
+		FirefoxNeeded: version.MustParseRange("< 55"),
+		FirefoxMobileNeeded: version.MustParseRange("< 55"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 12.2"),
+		OperaNeeded: version.MustParseRange("< 45"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("< 12.2"),
+		SamsungMobileNeeded: version.MustParseRange("< 7"),
+	},
+)
+
+var IntersectionObserverEntry = types.NewPolyfill(
+	 IntersectionObserverEntry_Code,
+	 []*types.Polyfill{  IntersectionObserver,  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.MakeEqualsMajor(version.MustParse("15")),
+		EdgeMobileNeeded: version.MakeEqualsMajor(version.MustParse("15")),
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.None,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Intl_DateTimeFormat = types.NewPolyfill(
+	 Intl_DateTimeFormat_Code,
+	 []*types.Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Date_now,  Intl_getCanonicalLocales,  Intl_Locale,  Intl_NumberFormat,  Object_assign,  Object_create,  Object_keys,  Object_setPrototypeOf,  Set,  WeakMap,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<71"),
+		EdgeNeeded: version.MustParseRange("<71"),
+		EdgeMobileNeeded: version.MustParseRange("<71"),
+		FirefoxNeeded: version.MustParseRange("<51"),
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<11"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<11"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Intl_DisplayNames = types.NewPolyfill(
+	 Intl_DisplayNames_Code,
+	 []*types.Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Intl_getCanonicalLocales,  Intl_Locale,  Object_assign,  Object_create,  Object_defineProperty,  Object_keys,  WeakMap,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<72"),
+		EdgeNeeded: version.MustParseRange("<81"),
+		EdgeMobileNeeded: version.MustParseRange("<81"),
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Intl_ListFormat = types.NewPolyfill(
+	 Intl_ListFormat_Code,
+	 []*types.Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_forEach,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Intl_getCanonicalLocales,  Intl_Locale,  Object_assign,  Object_create,  Object_defineProperty,  Object_keys,  Object_setPrototypeOf,  WeakMap,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<72"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Intl_Locale = types.NewPolyfill(
+	 Intl_Locale_Code,
+	 []*types.Polyfill{  Array_prototype_filter,  Array_prototype_indexOf,  Array_prototype_reduce,  Array_prototype_sort,  Intl_getCanonicalLocales,  Object_assign,  Object_defineProperty,  Object_keys,  Set,  WeakMap,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<74"),
+		EdgeNeeded: version.MustParseRange("<79"),
+		EdgeMobileNeeded: version.MustParseRange("<79"),
+		FirefoxNeeded: version.MustParseRange("<75"),
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<14"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<14"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Intl_NumberFormat = types.NewPolyfill(
+	 Intl_NumberFormat_Code,
+	 []*types.Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_forEach,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Intl_getCanonicalLocales,  Intl_Locale,  Intl_PluralRules,  Object_assign,  Object_create,  Object_defineProperty,  Object_keys,  Object_setPrototypeOf,  WeakMap,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<77"),
+		EdgeNeeded: version.MustParseRange("<77"),
+		EdgeMobileNeeded: version.MustParseRange("<77"),
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Intl_PluralRules = types.NewPolyfill(
+	 Intl_PluralRules_Code,
+	 []*types.Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_forEach,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Intl_getCanonicalLocales,  Intl_Locale,  Object_assign,  Object_create,  Object_defineProperty,  Object_keys,  Object_setPrototypeOf,  WeakMap,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<63"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<63"),
+		EdgeNeeded: version.MustParseRange("<18"),
+		EdgeMobileNeeded: version.MustParseRange("<18"),
+		FirefoxNeeded: version.MustParseRange("<58"),
+		FirefoxMobileNeeded: version.MustParseRange("<58"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.MustParseRange("<50"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Intl_RelativeTimeFormat = types.NewPolyfill(
+	 Intl_RelativeTimeFormat_Code,
+	 []*types.Polyfill{  Array_isArray,  Array_prototype_filter,  Array_prototype_forEach,  Array_prototype_indexOf,  Array_prototype_lastIndexOf,  Array_prototype_map,  Array_prototype_reduce,  Intl_getCanonicalLocales,  Intl_Locale,  Intl_NumberFormat,  Intl_PluralRules,  Object_assign,  Object_create,  Object_defineProperty,  Object_keys,  Object_setPrototypeOf,  WeakMap,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<63"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<71"),
+		EdgeNeeded: version.MustParseRange("<79"),
+		EdgeMobileNeeded: version.MustParseRange("<79"),
+		FirefoxNeeded: version.MustParseRange("<65"),
+		FirefoxMobileNeeded: version.MustParseRange("<65"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.MustParseRange("<50"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var Intl_getCanonicalLocales = types.NewPolyfill(
+	 Intl_getCanonicalLocales_Code,
+	 []*types.Polyfill{  Array_prototype_filter,  Array_prototype_indexOf,  Array_prototype_reduce,  Array_prototype_sort,  Object_assign,  Object_defineProperty,  Object_keys,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<54"),
+		EdgeNeeded: version.MustParseRange("<16"),
+		EdgeMobileNeeded: version.MustParseRange("<16"),
+		FirefoxNeeded: version.MustParseRange("<48"),
+		FirefoxMobileNeeded: version.MustParseRange("<56"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<11"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<11"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var JSON = types.NewPolyfill(
+	 JSON_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("< 3.5"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("7"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("8.54"))).AND(version.MakeLTE(version.MustParse("10.4"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("< 4"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Map = types.NewPolyfill(
+	 Map_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_CreateIterResultObject,  _ESAbstract_GetMethod,  _ESAbstract_GetIterator,  _ESAbstract_IsCallable,  _ESAbstract_IteratorClose,  _ESAbstract_IteratorComplete,  _ESAbstract_IteratorNext,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_OrdinaryCreateFromConstructor,  _ESAbstract_SameValueZero,  _ESAbstract_Type,  Array_isArray,  Symbol,  Symbol_iterator,  Symbol_species,  Object_create,  Object_defineProperty,  Object_isExtensible,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5.1"),
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<45"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<36"),
+		FirefoxMobileNeeded: version.MustParseRange("<29"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_acosh = types.NewPolyfill(
+	 Math_acosh_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_asinh = types.NewPolyfill(
+	 Math_asinh_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_atanh = types.NewPolyfill(
+	 Math_atanh_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_cbrt = types.NewPolyfill(
+	 Math_cbrt_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_clz32 = types.NewPolyfill(
+	 Math_clz32_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToUint32,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<31"),
+		FirefoxMobileNeeded: version.MustParseRange("<31"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<7"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<7"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_cosh = types.NewPolyfill(
+	 Math_cosh_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_expm1 = types.NewPolyfill(
+	 Math_expm1_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_fround = types.NewPolyfill(
+	 Math_fround_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _TypedArray,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<37"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<26"),
+		FirefoxMobileNeeded: version.MustParseRange("<26"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_hypot = types.NewPolyfill(
+	 Math_hypot_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38 || 77"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<27"),
+		FirefoxMobileNeeded: version.MustParseRange("<27"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_imul = types.NewPolyfill(
+	 Math_imul_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToUint32,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<28"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<20"),
+		FirefoxMobileNeeded: version.MustParseRange("<20"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<7"),
+		OperaNeeded: version.MustParseRange("<16"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<7"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_log10 = types.NewPolyfill(
+	 Math_log10_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_log1p = types.NewPolyfill(
+	 Math_log1p_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_log2 = types.NewPolyfill(
+	 Math_log2_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_sign = types.NewPolyfill(
+	 Math_sign_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_sinh = types.NewPolyfill(
+	 Math_sinh_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_tanh = types.NewPolyfill(
+	 Math_tanh_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Math_trunc = types.NewPolyfill(
+	 Math_trunc_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<8"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var MutationObserver = types.NewPolyfill(
+	 MutationObserver_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<4.4"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<26"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<14"),
+		FirefoxMobileNeeded: version.MustParseRange("<14"),
+		IENeeded: version.MustParseRange("<11"),
+		IEMobileNeeded: version.MustParseRange("<11"),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<7"),
+		OperaNeeded: version.MustParseRange("<15"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<6"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Node_prototype_contains = types.NewPolyfill(
+	 Node_prototype_contains_Code,
+	 []*types.Polyfill{  Element,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("8"))),
+		FirefoxMobileNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("8"))),
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("2"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var NodeList_prototype_ααiterator = types.NewPolyfill(
+	 NodeList_prototype_ααiterator_Code,
+	 []*types.Polyfill{  _ArrayIterator,  Symbol_iterator,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<51"),
+		EdgeNeeded: version.MustParseRange("<16"),
+		EdgeMobileNeeded: version.MustParseRange("<16"),
+		FirefoxNeeded: version.MustParseRange("<50"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<50"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var NodeList_prototype_forEach = types.NewPolyfill(
+	 NodeList_prototype_forEach_Code,
+	 []*types.Polyfill{  Array_prototype_forEach,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<51"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<51"),
+		EdgeNeeded: version.MustParseRange("<16"),
+		EdgeMobileNeeded: version.MustParseRange("<16"),
+		FirefoxNeeded: version.MustParseRange("<50"),
+		FirefoxMobileNeeded: version.MustParseRange("<50"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<38"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Number_Epsilon = types.NewPolyfill(
+	 Number_Epsilon_Code,
+	 []*types.Polyfill{  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Number_MAX_SAFE_INTEGER = types.NewPolyfill(
+	 Number_MAX_SAFE_INTEGER_Code,
+	 []*types.Polyfill{  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<34"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<31"),
+		FirefoxMobileNeeded: version.MustParseRange("<32"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<32"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Number_MIN_SAFE_INTEGER = types.NewPolyfill(
+	 Number_MIN_SAFE_INTEGER_Code,
+	 []*types.Polyfill{  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<34"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<31"),
+		FirefoxMobileNeeded: version.MustParseRange("<32"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<32"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Number_isFinite = types.NewPolyfill(
+	 Number_isFinite_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<19"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<16"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.MustParseRange("<15"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Number_isInteger = types.NewPolyfill(
+	 Number_isInteger_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToInteger,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<34"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<16"),
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<22"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Number_isNaN = types.NewPolyfill(
+	 Number_isNaN_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<4.1"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<19"),
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.MustParseRange("<16"),
+		FirefoxMobileNeeded: version.MustParseRange("<44"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<21"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Number_isSafeInteger = types.NewPolyfill(
+	 Number_isSafeInteger_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToInteger,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<32"),
+		FirefoxMobileNeeded: version.MustParseRange("<32"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Number_parseFloat = types.NewPolyfill(
+	 Number_parseFloat_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  String_prototype_trim,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<51"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<34"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<21"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Number_parseInt = types.NewPolyfill(
+	 Number_parseInt_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  String_prototype_trim,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<51"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<34"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<25"),
+		FirefoxMobileNeeded: version.MustParseRange("<25"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<21"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_assign = types.NewPolyfill(
+	 Object_assign_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Get,  _ESAbstract_ToObject,  Object_getOwnPropertyDescriptor,  Object_keys,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("45"))),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("33"))),
+		FirefoxMobileNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("33"))),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("31"))),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("8"))),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Object_create = types.NewPolyfill(
+	 Object_create_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  Object_defineProperties,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<4"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MakeEqualsMajor(version.MustParse("4")),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_defineProperties = types.NewPolyfill(
+	 Object_defineProperties_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Get,  _ESAbstract_ToObject,  _ESAbstract_Type,  Object_keys,  Object_getOwnPropertyDescriptor,  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<4"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("4.1"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_defineProperty = types.NewPolyfill(
+	 Object_defineProperty_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MakeEqualsMajorMinor(version.MustParse("3.6")),
+		FirefoxMobileNeeded: version.MakeEqualsMajorMinor(version.MustParse("3.6")),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MakeEqualsMajorMinor(version.MustParse("4.3")),
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("4.1"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_entries = types.NewPolyfill(
+	 Object_entries_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_EnumerableOwnProperties,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("< 54"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("< 54"),
+		EdgeNeeded: version.MustParseRange("< 14"),
+		EdgeMobileNeeded: version.MustParseRange("< 14"),
+		FirefoxNeeded: version.MustParseRange("< 47"),
+		FirefoxMobileNeeded: version.MustParseRange("< 47"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.MustParseRange("< 54"),
+		IOSSafariNeeded: version.MustParseRange("< 10.3"),
+		OperaNeeded: version.MustParseRange("< 41"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("< 10.1"),
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var Object_freeze = types.NewPolyfill(
+	 Object_freeze_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<6"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<4"),
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.MustParseRange("<9"),
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.MustParseRange("<12"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<5.1"),
+		SamsungMobileNeeded: version.MustParseRange("<6"),
+	},
+)
+
+var Object_fromEntries = types.NewPolyfill(
+	 Object_fromEntries_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToPropertyKey,  _ESAbstract_CreateDataPropertyOrThrow,  _ESAbstract_AddEntriesFromIterable,  Array_prototype_ααiterator,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<73"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<63"),
+		FirefoxMobileNeeded: version.MustParseRange("<63"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<12.1"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<12.1"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Object_getOwnPropertyDescriptor = types.NewPolyfill(
+	 Object_getOwnPropertyDescriptor_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_HasOwnProperty,  _ESAbstract_ToObject,  _ESAbstract_ToPropertyKey,  _ESAbstract_Type,  Function_prototype_bind,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<=4.4"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<=44"),
+		EdgeNeeded: version.MustParseRange("<=13"),
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<=35"),
+		FirefoxMobileNeeded: version.MustParseRange("<=35"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<=9"),
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<=9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_getOwnPropertyDescriptors = types.NewPolyfill(
+	 Object_getOwnPropertyDescriptors_Code,
+	 []*types.Polyfill{  Object_getOwnPropertyDescriptor,  Object_defineProperty,  Reflect_ownKeys,  _ESAbstract_ToObject,  _ESAbstract_CreateMethodProperty,  _ESAbstract_CreateDataProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<54"),
+		EdgeNeeded: version.MustParseRange("<15"),
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<50"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_getOwnPropertyNames = types.NewPolyfill(
+	 Object_getOwnPropertyNames_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  Object_keys,  Array_prototype_includes,  Array_prototype_indexOf,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<40"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<34"),
+		FirefoxMobileNeeded: version.MustParseRange("<34"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_getPrototypeOf = types.NewPolyfill(
+	 Object_getPrototypeOf_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MakeEqualsMajorMinor(version.MustParse("3.6")),
+		FirefoxMobileNeeded: version.MakeEqualsMajorMinor(version.MustParse("3.6")),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MakeEqualsMajor(version.MustParse("4")),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_is = types.NewPolyfill(
+	 Object_is_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_SameValue,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("< 4.4"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("< 29"),
+		EdgeNeeded: version.MustParseRange("< 12"),
+		EdgeMobileNeeded: version.MustParseRange("< 14"),
+		FirefoxNeeded: version.MustParseRange("< 22"),
+		FirefoxMobileNeeded: version.MustParseRange("< 22"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 9"),
+		OperaNeeded: version.MustParseRange("< 32"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("< 9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_isExtensible = types.NewPolyfill(
+	 Object_isExtensible_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<44"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<35"),
+		FirefoxMobileNeeded: version.MustParseRange("<35"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Object_isFrozen = types.NewPolyfill(
+	 Object_isFrozen_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<44"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<35"),
+		FirefoxMobileNeeded: version.MustParseRange("<35"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<31"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_isSealed = types.NewPolyfill(
+	 Object_isSealed_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<44"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<35"),
+		FirefoxMobileNeeded: version.MustParseRange("<35"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Object_keys = types.NewPolyfill(
+	 Object_keys_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<47"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<38"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<34"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_preventExtensions = types.NewPolyfill(
+	 Object_preventExtensions_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<44"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<35"),
+		FirefoxMobileNeeded: version.MustParseRange("<35"),
+		IENeeded: version.MustParseRange("<11"),
+		IEMobileNeeded: version.MustParseRange("<11"),
+		IOSChromeNeeded: version.MustParseRange("<9"),
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<31"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Object_seal = types.NewPolyfill(
+	 Object_seal_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("< 4"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("< 6"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("< 4"),
+		FirefoxMobileNeeded: version.MustParseRange("< 4"),
+		IENeeded: version.MustParseRange("< 9"),
+		IEMobileNeeded: version.MustParseRange("< 9"),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("< 5.1"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_setPrototypeOf = types.NewPolyfill(
+	 Object_setPrototypeOf_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  Array_prototype_forEach,  Object_create,  Object_defineProperty,  Object_getPrototypeOf,  Object_getOwnPropertyNames,  Object_getOwnPropertyDescriptor,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("< 34"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("< 31"),
+		FirefoxMobileNeeded: version.MustParseRange("< 31"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("< 9"),
+		OperaNeeded: version.MustParseRange("< 34"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("< 9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Object_values = types.NewPolyfill(
+	 Object_values_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  Array_prototype_map,  Object_defineProperty,  Object_keys,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("< 54"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("< 54"),
+		EdgeNeeded: version.MustParseRange("< 14"),
+		EdgeMobileNeeded: version.MustParseRange("< 14"),
+		FirefoxNeeded: version.MustParseRange("< 47"),
+		FirefoxMobileNeeded: version.MustParseRange("< 47"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.MustParseRange("< 54"),
+		IOSSafariNeeded: version.MustParseRange("< 10.3"),
+		OperaNeeded: version.MustParseRange("< 41"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("< 10.1"),
+		SamsungMobileNeeded: version.MustParseRange("< 6"),
+	},
+)
+
+var Promise = types.NewPolyfill(
+	 Promise_Code,
+	 []*types.Polyfill{  Symbol_toStringTag,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("4.4"))),
+		BBNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("10"))),
+		ChromeNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("31"))),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("28"))),
+		FirefoxMobileNeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("28"))),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("7.1"))),
+		OperaNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("19"))),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("7"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Promise_prototype_finally = types.NewPolyfill(
+	 Promise_prototype_finally_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsCallable,  _ESAbstract_SpeciesConstructor,  Promise,  Function_prototype_bind,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange(">4.4 <64"),
+		BBNeeded: version.MustParseRange(">10"),
+		ChromeNeeded: version.MustParseRange(">31 <64"),
+		EdgeNeeded: version.MustParseRange(">12 <18"),
+		EdgeMobileNeeded: version.MustParseRange(">12 <18"),
+		FirefoxNeeded: version.MustParseRange(">28 <58"),
+		FirefoxMobileNeeded: version.MustParseRange(">28 <58"),
+		IENeeded: version.MustParseRange(">12"),
+		IEMobileNeeded: version.MustParseRange(">12"),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange(">7.1 <11.3"),
+		OperaNeeded: version.MustParseRange(">19 <50"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange(">7 <11.1"),
+		SamsungMobileNeeded: version.MustParseRange(">2 <8"),
+	},
+)
+
+var Reflect = types.NewPolyfill(
+	 Reflect_Code,
+	 []*types.Polyfill{  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_apply = types.NewPolyfill(
+	 Reflect_apply_Code,
+	 []*types.Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsCallable,  _ESAbstract_CreateListFromArrayLike,  _ESAbstract_Call,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_construct = types.NewPolyfill(
+	 Reflect_construct_Code,
+	 []*types.Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_IsConstructor,  _ESAbstract_CreateListFromArrayLike,  _ESAbstract_Construct,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_defineProperty = types.NewPolyfill(
+	 Reflect_defineProperty_Code,
+	 []*types.Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  _ESAbstract_ToPropertyDescriptor,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_deleteProperty = types.NewPolyfill(
+	 Reflect_deleteProperty_Code,
+	 []*types.Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  _ESAbstract_HasOwnProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_get = types.NewPolyfill(
+	 Reflect_get_Code,
+	 []*types.Polyfill{  Reflect,  _ESAbstract_Call,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  Object_getOwnPropertyDescriptor,  Object_getPrototypeOf,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_getOwnPropertyDescriptor = types.NewPolyfill(
+	 Reflect_getOwnPropertyDescriptor_Code,
+	 []*types.Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  Object_getOwnPropertyDescriptor,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_getPrototypeOf = types.NewPolyfill(
+	 Reflect_getPrototypeOf_Code,
+	 []*types.Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  Object_getPrototypeOf,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_has = types.NewPolyfill(
+	 Reflect_has_Code,
+	 []*types.Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  _ESAbstract_HasProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_isExtensible = types.NewPolyfill(
+	 Reflect_isExtensible_Code,
+	 []*types.Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  Object_isExtensible,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_ownKeys = types.NewPolyfill(
+	 Reflect_ownKeys_Code,
+	 []*types.Polyfill{  Reflect,  Symbol,  Object_getOwnPropertyNames,  _ESAbstract_Type,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_preventExtensions = types.NewPolyfill(
+	 Reflect_preventExtensions_Code,
+	 []*types.Polyfill{  Reflect,  Object_preventExtensions,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_set = types.NewPolyfill(
+	 Reflect_set_Code,
+	 []*types.Polyfill{  Reflect,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  _ESAbstract_ToPropertyKey,  _ESAbstract_Call,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Reflect_setPrototypeOf = types.NewPolyfill(
+	 Reflect_setPrototypeOf_Code,
+	 []*types.Polyfill{  Reflect,  Reflect_getPrototypeOf,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Type,  Object_setPrototypeOf,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<42"),
+		FirefoxMobileNeeded: version.MustParseRange("<42"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var RegExp_prototype_flags = types.NewPolyfill(
+	 RegExp_prototype_flags_Code,
+	 []*types.Polyfill{  _ESAbstract_Get,  _ESAbstract_ToBoolean,  _ESAbstract_Type,  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<6"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<37"),
+		FirefoxMobileNeeded: version.MustParseRange("<37"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IOSChromeNeeded: version.MustParseRange("<9"),
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<39"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<19"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var ResizeObserver = types.NewPolyfill(
+	 ResizeObserver_Code,
+	 []*types.Polyfill{  WeakMap,  MutationObserver,  RequestAnimationFrame,  DevicePixelRatio,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<64"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<69"),
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.MustParseRange("<51"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.MustParseRange("<9"),
+	},
+)
+
+var Set = types.NewPolyfill(
+	 Set_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_CreateIterResultObject,  _ESAbstract_GetMethod,  _ESAbstract_GetIterator,  _ESAbstract_IsCallable,  _ESAbstract_IteratorClose,  _ESAbstract_IteratorComplete,  _ESAbstract_IteratorNext,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_OrdinaryCreateFromConstructor,  _ESAbstract_SameValueZero,  Array_isArray,  Symbol,  Symbol_iterator,  Symbol_species,  Object_create,  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5.1"),
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<45"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<36"),
+		FirefoxMobileNeeded: version.MustParseRange("<29"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var String_fromCodePoint = types.NewPolyfill(
+	 String_fromCodePoint_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToNumber,  _ESAbstract_SameValue,  _ESAbstract_ToInteger,  _ESAbstract_IsArray,  _ESAbstract_UTF16Encoding,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<47"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<38"),
+		FirefoxMobileNeeded: version.MustParseRange("<38"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<34"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var String_prototype_ααiterator = types.NewPolyfill(
+	 String_prototype_ααiterator_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _StringIterator,  Symbol_iterator,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5.1"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<38"),
+		FirefoxMobileNeeded: version.MustParseRange("<38"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.MakeLTE(version.MustParse("12"))),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.MakeLTE(version.MustParse("12"))),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<36"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var String_prototype_anchor = types.NewPolyfill(
+	 String_prototype_anchor_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<3"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_big = types.NewPolyfill(
+	 String_prototype_big_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<3"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_blink = types.NewPolyfill(
+	 String_prototype_blink_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<3"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_bold = types.NewPolyfill(
+	 String_prototype_bold_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<3"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_codePointAt = types.NewPolyfill(
+	 String_prototype_codePointAt_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_ToInteger,  _ESAbstract_UTF16Decode,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<41"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<29"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.MustParseRange("<28"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var String_prototype_endsWith = types.NewPolyfill(
+	 String_prototype_endsWith_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_IsRegExp,  _ESAbstract_ToInteger,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<=40"),
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("3.6"))).AND(version.MakeLTE(version.MustParse("17"))),
+		FirefoxMobileNeeded: version.Range(version.MakeGTE(version.MustParse("3.6"))).AND(version.MakeLTE(version.MustParse("17"))),
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("18"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9.1"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var String_prototype_fixed = types.NewPolyfill(
+	 String_prototype_fixed_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<3"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_fontcolor = types.NewPolyfill(
+	 String_prototype_fontcolor_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<3"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_fontsize = types.NewPolyfill(
+	 String_prototype_fontsize_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<3"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_includes = types.NewPolyfill(
+	 String_prototype_includes_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_IsRegExp,  _ESAbstract_ToInteger,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<=40"),
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.MustParseRange("<=39"),
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("18"))),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var String_prototype_italics = types.NewPolyfill(
+	 String_prototype_italics_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<3"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_link = types.NewPolyfill(
+	 String_prototype_link_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<1"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_normalize = types.NewPolyfill(
+	 String_prototype_normalize_Code,
+	 []*types.Polyfill{  Array_prototype_reduceRight,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<34"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<31"),
+		FirefoxMobileNeeded: version.MustParseRange("<31"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<2"),
+	},
+)
+
+var String_prototype_padEnd = types.NewPolyfill(
+	 String_prototype_padEnd_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_ToLength,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<57"),
+		EdgeNeeded: version.MustParseRange("<15"),
+		EdgeMobileNeeded: version.MustParseRange("<15"),
+		FirefoxNeeded: version.MustParseRange("<48"),
+		FirefoxMobileNeeded: version.MustParseRange("<48"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<44"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var String_prototype_padStart = types.NewPolyfill(
+	 String_prototype_padStart_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_ToLength,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<57"),
+		EdgeNeeded: version.MustParseRange("<15"),
+		EdgeMobileNeeded: version.MustParseRange("<15"),
+		FirefoxNeeded: version.MustParseRange("<48"),
+		FirefoxMobileNeeded: version.MustParseRange("<48"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<44"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var String_prototype_repeat = types.NewPolyfill(
+	 String_prototype_repeat_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToInteger,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<41"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<24"),
+		FirefoxMobileNeeded: version.MustParseRange("<23"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<18"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var String_prototype_replaceAll = types.NewPolyfill(
+	 String_prototype_replaceAll_Code,
+	 []*types.Polyfill{  _ESAbstract_Call,  _ESAbstract_CreateMethodProperty,  _ESAbstract_Get,  _ESAbstract_GetMethod,  _ESAbstract_GetSubstitution,  _ESAbstract_IsCallable,  _ESAbstract_IsRegExp,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_StringIndexOf,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<85"),
+		EdgeNeeded: version.MustParseRange("<85"),
+		EdgeMobileNeeded: version.MustParseRange("<85"),
+		FirefoxNeeded: version.MustParseRange("<77"),
+		FirefoxMobileNeeded: version.MustParseRange("<79"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.MustParseRange("<13.4"),
+		IOSSafariNeeded: version.MustParseRange("<13.4"),
+		OperaNeeded: version.MustParseRange("<71"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<13.1"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var String_prototype_small = types.NewPolyfill(
+	 String_prototype_small_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<1"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_startsWith = types.NewPolyfill(
+	 String_prototype_startsWith_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  _ESAbstract_IsRegExp,  _ESAbstract_ToInteger,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<=40"),
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("3.6"))).AND(version.MakeLTE(version.MustParse("17"))),
+		FirefoxMobileNeeded: version.Range(version.MakeGTE(version.MustParse("3.6"))).AND(version.MakeLTE(version.MustParse("17"))),
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("18"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var String_prototype_strike = types.NewPolyfill(
+	 String_prototype_strike_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<1"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_sub = types.NewPolyfill(
+	 String_prototype_sub_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<1"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_sup = types.NewPolyfill(
+	 String_prototype_sup_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateHTML,  _ESAbstract_CreateMethodProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<1"),
+		BBNeeded: version.MustParseRange("<1"),
+		ChromeNeeded: version.MustParseRange("<1"),
+		EdgeNeeded: version.MustParseRange("<12"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<1"),
+		FirefoxMobileNeeded: version.MustParseRange("<4"),
+		IENeeded: version.MustParseRange("<3"),
+		IEMobileNeeded: version.MustParseRange("<3"),
+		IOSChromeNeeded: version.MustParseRange("<1"),
+		IOSSafariNeeded: version.MustParseRange("<1"),
+		OperaNeeded: version.MustParseRange("<1"),
+		OperaMiniNeeded: version.MustParseRange("<1"),
+		SafariNeeded: version.MustParseRange("<1"),
+		SamsungMobileNeeded: version.MustParseRange("<1"),
+	},
+)
+
+var String_prototype_trim = types.NewPolyfill(
+	 String_prototype_trim_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_TrimString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<59"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<59"),
+		EdgeNeeded: version.MustParseRange("<15"),
+		EdgeMobileNeeded: version.MustParseRange("<15"),
+		FirefoxNeeded: version.MustParseRange("<52"),
+		FirefoxMobileNeeded: version.MustParseRange("<52"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.MustParseRange("<12.1"),
+		IOSSafariNeeded: version.MustParseRange("<12.1"),
+		OperaNeeded: version.MustParseRange("<53"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<12.1"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var String_prototype_trimEnd = types.NewPolyfill(
+	 String_prototype_trimEnd_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_TrimString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<66"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<66"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<61"),
+		FirefoxMobileNeeded: version.MustParseRange("<61"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.MustParseRange("<12.1"),
+		IOSSafariNeeded: version.MustParseRange("<12.1"),
+		OperaNeeded: version.MustParseRange("<53"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<12.1"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var String_prototype_trimStart = types.NewPolyfill(
+	 String_prototype_trimStart_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_TrimString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<66"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<66"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<61"),
+		FirefoxMobileNeeded: version.MustParseRange("<61"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.MustParseRange("<12.1"),
+		IOSSafariNeeded: version.MustParseRange("<12.1"),
+		OperaNeeded: version.MustParseRange("<53"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<12.1"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var String_raw = types.NewPolyfill(
+	 String_raw_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_ToObject,  _ESAbstract_Get,  _ESAbstract_ToLength,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<41"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<34"),
+		FirefoxMobileNeeded: version.MustParseRange("<34"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.MustParseRange("<10"),
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("<33"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<10"),
+		SamsungMobileNeeded: version.MustParseRange("<4"),
+	},
+)
+
+var Symbol = types.NewPolyfill(
+	 Symbol_Code,
+	 []*types.Polyfill{  Array_prototype_forEach,  Array_prototype_filter,  Array_prototype_map,  Object_create,  Object_defineProperty,  Object_getOwnPropertyNames,  Object_getOwnPropertyDescriptor,  Object_freeze,  Object_keys,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5.1"),
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<36"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_asyncIterator = types.NewPolyfill(
+	 Symbol_asyncIterator_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("< 63"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("< 63"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("< 55"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 11.1"),
+		OperaNeeded: version.MustParseRange("< 50"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("< 11.1"),
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Symbol_hasInstance = types.NewPolyfill(
+	 Symbol_hasInstance_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("< 50"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("< 40"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 10"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_isConcatSpreadable = types.NewPolyfill(
+	 Symbol_isConcatSpreadable_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("< 50"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("< 40"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 10"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_iterator = types.NewPolyfill(
+	 Symbol_iterator_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5.1"),
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<36"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 9"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_match = types.NewPolyfill(
+	 Symbol_match_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<50"),
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("< 50"),
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.MustParseRange("< 40"),
+		FirefoxMobileNeeded: version.MustParseRange("< 40"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 10"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_prototype_description = types.NewPolyfill(
+	 Symbol_prototype_description_Code,
+	 []*types.Polyfill{  Symbol,  Object_defineProperty,  String_prototype_trim,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("< 70"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("< 63"),
+		FirefoxMobileNeeded: version.MustParseRange("< 63"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.MustParseRange("< 57"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Symbol_replace = types.NewPolyfill(
+	 Symbol_replace_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<50"),
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("< 50"),
+		EdgeNeeded: version.MustParseRange("<18.17134"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.MustParseRange("< 49"),
+		FirefoxMobileNeeded: version.MustParseRange("<49"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 10"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_search = types.NewPolyfill(
+	 Symbol_search_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("< 50"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<45"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 10"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_species = types.NewPolyfill(
+	 Symbol_species_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<51"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<41"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<10"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_split = types.NewPolyfill(
+	 Symbol_split_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("< 50"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<45"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 10"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_toPrimitive = types.NewPolyfill(
+	 Symbol_toPrimitive_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("< 50"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<44"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 10"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_toStringTag = types.NewPolyfill(
+	 Symbol_toStringTag_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("< 51"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 10"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Symbol_unscopables = types.NewPolyfill(
+	 Symbol_unscopables_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<49.0.0"),
+		EdgeNeeded: version.MustParseRange("<13"),
+		EdgeMobileNeeded: version.MustParseRange("<13"),
+		FirefoxNeeded: version.MustParseRange("<45"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("< 9"),
+		OperaNeeded: version.MustParseRange("< 37"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var TextEncoder = types.NewPolyfill(
+	 TextEncoder_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MakeEqualsMajor(version.MustParse("38")),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<38"),
+		EdgeNeeded: version.MustParseRange("<79"),
+		EdgeMobileNeeded: version.MustParseRange("<79"),
+		FirefoxNeeded: version.MustParseRange("<19"),
+		FirefoxMobileNeeded: version.MustParseRange("<19"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<10.3"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<10.1"),
+		SamsungMobileNeeded: version.MustParseRange("<3.0"),
+	},
+)
+
+var URL = types.NewPolyfill(
+	 URL_Code,
+	 []*types.Polyfill{  Object_defineProperties,  Array_prototype_forEach,  Array_isArray,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<60"),
+		EdgeNeeded: version.MustParseRange("<18.17134"),
+		EdgeMobileNeeded: version.MustParseRange("<17"),
+		FirefoxNeeded: version.MustParseRange("<44"),
+		FirefoxMobileNeeded: version.MustParseRange("<44"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<12"),
+		OperaNeeded: version.MustParseRange("<36"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<12"),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var UserTiming = types.NewPolyfill(
+	 UserTiming_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<=4"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<=24"),
+		EdgeNeeded: version.MustParseRange("<18.17134"),
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<=37"),
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("9"))),
+		IEMobileNeeded: version.MustParseRange("<=9"),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.MustParseRange("<=12"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var WeakMap = types.NewPolyfill(
+	 WeakMap_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_OrdinaryCreateFromConstructor,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_GetIterator,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_Call,  _ESAbstract_IteratorClose,  _ESAbstract_IsArray,  Object_defineProperty,  _ESAbstract_Type,  _ESAbstract_SameValue,  Symbol,  Array_isArray,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<44"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<40"),
+		FirefoxMobileNeeded: version.MustParseRange("<36"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var WeakSet = types.NewPolyfill(
+	 WeakSet_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateMethodProperty,  _ESAbstract_OrdinaryCreateFromConstructor,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_GetIterator,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_Call,  _ESAbstract_IteratorClose,  _ESAbstract_IsArray,  Object_defineProperty,  _ESAbstract_Type,  _ESAbstract_SameValueZero,  Symbol,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<44"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<40"),
+		FirefoxMobileNeeded: version.MustParseRange("<34"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("7"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("11"))),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<9"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var WebAnimations = types.NewPolyfill(
+	 WebAnimations_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<53"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("38"))),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("27"))).AND(version.MakeLTE(version.MustParse("50"))),
+		FirefoxMobileNeeded: version.Range(version.MakeGTE(version.MustParse("27"))).AND(version.MakeLTE(version.MustParse("50"))),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.Range(version.MakeGTE(version.MustParse("7.1"))).AND(version.All),
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("11.6"))).AND(version.MakeLTE(version.MustParse("42"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Window = types.NewPolyfill(
+	 Window_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.Range(version.MakeGTE(version.MustParse("14"))).AND(version.MakeLTE(version.MustParse("18"))),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("7"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("11.6"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("5.1"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var XMLHttpRequest = types.NewPolyfill(
+	 XMLHttpRequest_Code,
+	 []*types.Polyfill{  Event,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var _ArrayIterator = types.NewPolyfill(
+	 _ArrayIterator_Code,
+	 []*types.Polyfill{  _Iterator,  Object_create,  Object_defineProperty,  Object_setPrototypeOf,  String_prototype_includes,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _DOMTokenList = types.NewPolyfill(
+	 _DOMTokenList_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Array_prototype_forEach,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_AddEntriesFromIterable = types.NewPolyfill(
+	 _ESAbstract_AddEntriesFromIterable_Code,
+	 []*types.Polyfill{  _ESAbstract_IsCallable,  _ESAbstract_GetIterator,  _ESAbstract_IteratorStep,  _ESAbstract_IteratorValue,  _ESAbstract_IteratorClose,  _ESAbstract_Get,  _ESAbstract_Call,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ArrayCreate = types.NewPolyfill(
+	 _ESAbstract_ArrayCreate_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ArraySpeciesCreate = types.NewPolyfill(
+	 _ESAbstract_ArraySpeciesCreate_Code,
+	 []*types.Polyfill{  _ESAbstract_IsArray,  _ESAbstract_ArrayCreate,  _ESAbstract_Get,  _ESAbstract_Type,  _ESAbstract_IsConstructor,  _ESAbstract_Construct,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_Call = types.NewPolyfill(
+	 _ESAbstract_Call_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_CanonicalNumericIndexString = types.NewPolyfill(
+	 _ESAbstract_CanonicalNumericIndexString_Code,
+	 []*types.Polyfill{  _ESAbstract_SameValue,  _ESAbstract_ToNumber,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_Construct = types.NewPolyfill(
+	 _ESAbstract_Construct_Code,
+	 []*types.Polyfill{  _ESAbstract_IsConstructor,  _ESAbstract_OrdinaryCreateFromConstructor,  Function_prototype_bind,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_CreateDataProperty = types.NewPolyfill(
+	 _ESAbstract_CreateDataProperty_Code,
+	 []*types.Polyfill{  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_CreateDataPropertyOrThrow = types.NewPolyfill(
+	 _ESAbstract_CreateDataPropertyOrThrow_Code,
+	 []*types.Polyfill{  _ESAbstract_CreateDataProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_CreateHTML = types.NewPolyfill(
+	 _ESAbstract_CreateHTML_Code,
+	 []*types.Polyfill{  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_CreateIterResultObject = types.NewPolyfill(
+	 _ESAbstract_CreateIterResultObject_Code,
+	 []*types.Polyfill{  _ESAbstract_Type,  _ESAbstract_CreateDataProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_CreateListFromArrayLike = types.NewPolyfill(
+	 _ESAbstract_CreateListFromArrayLike_Code,
+	 []*types.Polyfill{  _ESAbstract_Type,  _ESAbstract_ToLength,  _ESAbstract_Get,  _ESAbstract_ToString,  Array_prototype_includes,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_CreateMethodProperty = types.NewPolyfill(
+	 _ESAbstract_CreateMethodProperty_Code,
+	 []*types.Polyfill{  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_EnumerableOwnProperties = types.NewPolyfill(
+	 _ESAbstract_EnumerableOwnProperties_Code,
+	 []*types.Polyfill{  _ESAbstract_Get,  _ESAbstract_Type,  Object_getOwnPropertyDescriptor,  Object_keys,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_FlattenIntoArray = types.NewPolyfill(
+	 _ESAbstract_FlattenIntoArray_Code,
+	 []*types.Polyfill{  _ESAbstract_ToString,  _ESAbstract_HasProperty,  _ESAbstract_Get,  _ESAbstract_Call,  _ESAbstract_IsArray,  _ESAbstract_ToLength,  _ESAbstract_CreateDataPropertyOrThrow,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_Get = types.NewPolyfill(
+	 _ESAbstract_Get_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_GetIterator = types.NewPolyfill(
+	 _ESAbstract_GetIterator_Code,
+	 []*types.Polyfill{  _ESAbstract_Call,  _ESAbstract_GetMethod,  _ESAbstract_GetV,  _ESAbstract_Type,  Object_create,  Symbol_iterator,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_GetMethod = types.NewPolyfill(
+	 _ESAbstract_GetMethod_Code,
+	 []*types.Polyfill{  _ESAbstract_GetV,  _ESAbstract_IsCallable,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_GetPrototypeFromConstructor = types.NewPolyfill(
+	 _ESAbstract_GetPrototypeFromConstructor_Code,
+	 []*types.Polyfill{  _ESAbstract_Get,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_GetSubstitution = types.NewPolyfill(
+	 _ESAbstract_GetSubstitution_Code,
+	 []*types.Polyfill{  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_GetV = types.NewPolyfill(
+	 _ESAbstract_GetV_Code,
+	 []*types.Polyfill{  _ESAbstract_ToObject,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_HasOwnProperty = types.NewPolyfill(
+	 _ESAbstract_HasOwnProperty_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_HasProperty = types.NewPolyfill(
+	 _ESAbstract_HasProperty_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_Invoke = types.NewPolyfill(
+	 _ESAbstract_Invoke_Code,
+	 []*types.Polyfill{  _ESAbstract_Call,  _ESAbstract_GetV,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IsArray = types.NewPolyfill(
+	 _ESAbstract_IsArray_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IsCallable = types.NewPolyfill(
+	 _ESAbstract_IsCallable_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IsConstructor = types.NewPolyfill(
+	 _ESAbstract_IsConstructor_Code,
+	 []*types.Polyfill{  _ESAbstract_GetMethod,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IsInteger = types.NewPolyfill(
+	 _ESAbstract_IsInteger_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IsPropertyKey = types.NewPolyfill(
+	 _ESAbstract_IsPropertyKey_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IsRegExp = types.NewPolyfill(
+	 _ESAbstract_IsRegExp_Code,
+	 []*types.Polyfill{  _ESAbstract_Type,  _ESAbstract_ToBoolean,  _ESAbstract_Get,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IteratorClose = types.NewPolyfill(
+	 _ESAbstract_IteratorClose_Code,
+	 []*types.Polyfill{  _ESAbstract_Call,  _ESAbstract_GetMethod,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IteratorComplete = types.NewPolyfill(
+	 _ESAbstract_IteratorComplete_Code,
+	 []*types.Polyfill{  _ESAbstract_Type,  _ESAbstract_ToBoolean,  _ESAbstract_Get,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IteratorNext = types.NewPolyfill(
+	 _ESAbstract_IteratorNext_Code,
+	 []*types.Polyfill{  _ESAbstract_Type,  _ESAbstract_Call,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IteratorStep = types.NewPolyfill(
+	 _ESAbstract_IteratorStep_Code,
+	 []*types.Polyfill{  _ESAbstract_IteratorNext,  _ESAbstract_IteratorComplete,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_IteratorValue = types.NewPolyfill(
+	 _ESAbstract_IteratorValue_Code,
+	 []*types.Polyfill{  _ESAbstract_Get,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_OrdinaryCreateFromConstructor = types.NewPolyfill(
+	 _ESAbstract_OrdinaryCreateFromConstructor_Code,
+	 []*types.Polyfill{  _ESAbstract_GetPrototypeFromConstructor,  Object_create,  Object_defineProperty,  Object_getPrototypeOf,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_OrdinaryToPrimitive = types.NewPolyfill(
+	 _ESAbstract_OrdinaryToPrimitive_Code,
+	 []*types.Polyfill{  _ESAbstract_Call,  _ESAbstract_Get,  _ESAbstract_IsCallable,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_RequireObjectCoercible = types.NewPolyfill(
+	 _ESAbstract_RequireObjectCoercible_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_SameValue = types.NewPolyfill(
+	 _ESAbstract_SameValue_Code,
+	 []*types.Polyfill{  _ESAbstract_SameValueNonNumber,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_SameValueNonNumber = types.NewPolyfill(
+	 _ESAbstract_SameValueNonNumber_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_SameValueZero = types.NewPolyfill(
+	 _ESAbstract_SameValueZero_Code,
+	 []*types.Polyfill{  _ESAbstract_SameValueNonNumber,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_SpeciesConstructor = types.NewPolyfill(
+	 _ESAbstract_SpeciesConstructor_Code,
+	 []*types.Polyfill{  _ESAbstract_Get,  _ESAbstract_IsConstructor,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_StringIndexOf = types.NewPolyfill(
+	 _ESAbstract_StringIndexOf_Code,
+	 []*types.Polyfill{  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToBoolean = types.NewPolyfill(
+	 _ESAbstract_ToBoolean_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToIndex = types.NewPolyfill(
+	 _ESAbstract_ToIndex_Code,
+	 []*types.Polyfill{  _ESAbstract_ToInteger,  _ESAbstract_ToLength,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToInt16 = types.NewPolyfill(
+	 _ESAbstract_ToInt16_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToInt32 = types.NewPolyfill(
+	 _ESAbstract_ToInt32_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToInt8 = types.NewPolyfill(
+	 _ESAbstract_ToInt8_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToInteger = types.NewPolyfill(
+	 _ESAbstract_ToInteger_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToLength = types.NewPolyfill(
+	 _ESAbstract_ToLength_Code,
+	 []*types.Polyfill{  _ESAbstract_ToInteger,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToNumber = types.NewPolyfill(
+	 _ESAbstract_ToNumber_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToObject = types.NewPolyfill(
+	 _ESAbstract_ToObject_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToPrimitive = types.NewPolyfill(
+	 _ESAbstract_ToPrimitive_Code,
+	 []*types.Polyfill{  _ESAbstract_Call,  _ESAbstract_GetMethod,  _ESAbstract_OrdinaryToPrimitive,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToPropertyDescriptor = types.NewPolyfill(
+	 _ESAbstract_ToPropertyDescriptor_Code,
+	 []*types.Polyfill{  _ESAbstract_Type,  _ESAbstract_HasProperty,  _ESAbstract_ToBoolean,  _ESAbstract_Get,  _ESAbstract_IsCallable,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToPropertyKey = types.NewPolyfill(
+	 _ESAbstract_ToPropertyKey_Code,
+	 []*types.Polyfill{  _ESAbstract_ToPrimitive,  _ESAbstract_ToString,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToString = types.NewPolyfill(
+	 _ESAbstract_ToString_Code,
+	 []*types.Polyfill{  _ESAbstract_ToPrimitive,  _ESAbstract_Type,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToUint16 = types.NewPolyfill(
+	 _ESAbstract_ToUint16_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToUint32 = types.NewPolyfill(
+	 _ESAbstract_ToUint32_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToUint8 = types.NewPolyfill(
+	 _ESAbstract_ToUint8_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_ToUint8Clamp = types.NewPolyfill(
+	 _ESAbstract_ToUint8Clamp_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_TrimString = types.NewPolyfill(
+	 _ESAbstract_TrimString_Code,
+	 []*types.Polyfill{  _ESAbstract_RequireObjectCoercible,  _ESAbstract_ToString,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_Type = types.NewPolyfill(
+	 _ESAbstract_Type_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_UTF16Decode = types.NewPolyfill(
+	 _ESAbstract_UTF16Decode_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _ESAbstract_UTF16Encoding = types.NewPolyfill(
+	 _ESAbstract_UTF16Encoding_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _Iterator = types.NewPolyfill(
+	 _Iterator_Code,
+	 []*types.Polyfill{  Function_prototype_bind,  Object_assign,  Object_defineProperties,  Object_defineProperty,  Symbol,  Symbol_iterator,  Symbol_toStringTag,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _StringIterator = types.NewPolyfill(
+	 _StringIterator_Code,
+	 []*types.Polyfill{  _Iterator,  Object_create,  Object_defineProperty,  Object_setPrototypeOf,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _TypedArray = types.NewPolyfill(
+	 _TypedArray_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var _mutation = types.NewPolyfill(
+	 _mutation_Code,
+	 []*types.Polyfill{  Document,  Element,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Atob = types.NewPolyfill(
+	 Atob_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.MustParseRange("<10"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console = types.NewPolyfill(
+	 Console_Code,
+	 []*types.Polyfill{  Window,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_assert = types.NewPolyfill(
+	 Console_assert_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_clear = types.NewPolyfill(
+	 Console_clear_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<39"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_count = types.NewPolyfill(
+	 Console_count_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_debug = types.NewPolyfill(
+	 Console_debug_Code,
+	 []*types.Polyfill{  Window,  Console,  Console_log,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_dir = types.NewPolyfill(
+	 Console_dir_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_dirxml = types.NewPolyfill(
+	 Console_dirxml_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<39"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_error = types.NewPolyfill(
+	 Console_error_Code,
+	 []*types.Polyfill{  Window,  Console,  Console_log,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.MustParseRange("<10"),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_exception = types.NewPolyfill(
+	 Console_exception_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Console_group = types.NewPolyfill(
+	 Console_group_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_groupCollapsed = types.NewPolyfill(
+	 Console_groupCollapsed_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_groupEnd = types.NewPolyfill(
+	 Console_groupEnd_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_info = types.NewPolyfill(
+	 Console_info_Code,
+	 []*types.Polyfill{  Window,  Console,  Console_log,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.MustParseRange("<10"),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_log = types.NewPolyfill(
+	 Console_log_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_markTimeline = types.NewPolyfill(
+	 Console_markTimeline_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<68.0.0"),
+		EdgeNeeded: version.MustParseRange("<17.17134.0"),
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<75"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_profile = types.NewPolyfill(
+	 Console_profile_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_profileEnd = types.NewPolyfill(
+	 Console_profileEnd_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_profiles = types.NewPolyfill(
+	 Console_profiles_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_table = types.NewPolyfill(
+	 Console_table_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_time = types.NewPolyfill(
+	 Console_time_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<31"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_timeEnd = types.NewPolyfill(
+	 Console_timeEnd_Code,
+	 []*types.Polyfill{  Window,  Console,  Console_time,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_timeStamp = types.NewPolyfill(
+	 Console_timeStamp_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.MustParseRange("<16.15063"),
+		EdgeMobileNeeded: version.MustParseRange("<12"),
+		FirefoxNeeded: version.MustParseRange("<39"),
+		FirefoxMobileNeeded: version.MustParseRange("<10"),
+		IENeeded: version.MustParseRange("<11"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_timeline = types.NewPolyfill(
+	 Console_timeline_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<81"),
+		EdgeNeeded: version.MustParseRange("<17.17134.0"),
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<75"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_timelineEnd = types.NewPolyfill(
+	 Console_timelineEnd_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<81"),
+		EdgeNeeded: version.MustParseRange("<17.17134.0"),
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<75"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_trace = types.NewPolyfill(
+	 Console_trace_Code,
+	 []*types.Polyfill{  Window,  Console,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Console_warn = types.NewPolyfill(
+	 Console_warn_Code,
+	 []*types.Polyfill{  Window,  Console,  Console_log,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("1"))).AND(version.MakeLTE(version.MustParse("4"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var DevicePixelRatio = types.NewPolyfill(
+	 DevicePixelRatio_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<=17"),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("10"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9.3"),
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("9.1"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Document = types.NewPolyfill(
+	 Document_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Document_currentScript = types.NewPolyfill(
+	 Document_currentScript_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Document_getElementsByClassName = types.NewPolyfill(
+	 Document_getElementsByClassName_Code,
+	 []*types.Polyfill{  Document_querySelector,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.MustParseRange("<9"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Document_head = types.NewPolyfill(
+	 Document_head_Code,
+	 []*types.Polyfill{  Document,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MakeEqualsMajor(version.MustParse("4")),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Document_querySelector = types.NewPolyfill(
+	 Document_querySelector_Code,
+	 []*types.Polyfill{  Element,  Document,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Document_visibilityState = types.NewPolyfill(
+	 Document_visibilityState_Code,
+	 []*types.Polyfill{  CustomEvent,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.Range(version.MakeGTE(version.MustParse("4.4"))).AND(version.All),
+		BBNeeded: version.None,
+		ChromeNeeded: version.Range(version.MakeGTE(version.MustParse("14"))).AND(version.MakeLTE(version.MustParse("32"))),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.MakeLTE(version.MustParse("17"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.None,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("15"))).AND(version.MakeLTE(version.MustParse("19"))),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MakeEqualsMajor(version.MustParse("4")),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Fetch = types.NewPolyfill(
+	 Fetch_Code,
+	 []*types.Polyfill{  Array_prototype_forEach,  Object_getOwnPropertyNames,  Promise,  XMLHttpRequest,  Symbol_iterator,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<67"),
+		BBNeeded: version.Range(version.MakeGTE(version.MustParse("10"))).AND(version.All),
+		ChromeNeeded: version.MustParseRange("<66"),
+		EdgeNeeded: version.MustParseRange("<16"),
+		EdgeMobileNeeded: version.MustParseRange("<16"),
+		FirefoxNeeded: version.MustParseRange("<57"),
+		FirefoxMobileNeeded: version.MustParseRange("<64"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<12"),
+		OperaNeeded: version.MustParseRange("<53"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<12"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var GetComputedStyle = types.NewPolyfill(
+	 GetComputedStyle_Code,
+	 []*types.Polyfill{  Window,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var GlobalThis = types.NewPolyfill(
+	 GlobalThis_Code,
+	 []*types.Polyfill{  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<71"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<71"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<65"),
+		FirefoxMobileNeeded: version.MustParseRange("<65"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.MustParseRange("<12.1"),
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<12.1"),
+		SamsungMobileNeeded: version.MustParseRange("<10"),
+	},
+)
+
+var LocalStorage = types.NewPolyfill(
+	 LocalStorage_Code,
+	 []*types.Polyfill{  Array_prototype_forEach,  Window,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("7"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Location_origin = types.NewPolyfill(
+	 Location_origin_Code,
+	 []*types.Polyfill{  Object_defineProperties,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<29.0.0"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<=20"),
+		FirefoxMobileNeeded: version.MustParseRange("<=20"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("10"))),
+		IEMobileNeeded: version.MakeEqualsMajor(version.MustParse("10")),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<=6"),
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<=6"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var MatchMedia = types.NewPolyfill(
+	 MatchMedia_Code,
+	 []*types.Polyfill{  Event,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.Range(version.MakeGTE(version.MustParse("2.1"))).AND(version.MakeLTE(version.MustParse("2.3"))),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<37"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.MustParseRange("<10"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.Range(version.MakeGTE(version.MustParse("11.5"))).AND(version.MakeLTE(version.MustParse("12.1"))),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("5"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Navigator_geolocation = types.NewPolyfill(
+	 Navigator_geolocation_Code,
+	 []*types.Polyfill{  Document_head,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.MustParseRange("<9"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.MakeEqualsMajor(version.MustParse("15")),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MakeEqualsMajor(version.MustParse("4")),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var Navigator_sendBeacon = types.NewPolyfill(
+	 Navigator_sendBeacon_Code,
+	 []*types.Polyfill{  XMLHttpRequest,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<39"),
+		EdgeNeeded: version.MustParseRange("<14"),
+		EdgeMobileNeeded: version.MustParseRange("<14"),
+		FirefoxNeeded: version.MustParseRange("<31"),
+		FirefoxMobileNeeded: version.MustParseRange("<31"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<11.3"),
+		OperaNeeded: version.MustParseRange("<26"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<11.1"),
+		SamsungMobileNeeded: version.MustParseRange("<4"),
+	},
+)
+
+var Performance_now = types.NewPolyfill(
+	 Performance_now_Code,
+	 []*types.Polyfill{  Date_now,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<=4.3"),
+		BBNeeded: version.MustParseRange("<10"),
+		ChromeNeeded: version.MustParseRange("<24"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<15"),
+		FirefoxMobileNeeded: version.MustParseRange("<15"),
+		IENeeded: version.MustParseRange("<10"),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<9"),
+		OperaNeeded: version.MustParseRange("<15"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.MustParseRange("<8"),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var QueueMicrotask = types.NewPolyfill(
+	 QueueMicrotask_Code,
+	 []*types.Polyfill{  Promise,  Event,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<71"),
+		BBNeeded: version.None,
+		ChromeNeeded: version.MustParseRange("<71"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.MustParseRange("<69"),
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.All,
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.MustParseRange("<12.2"),
+		OperaNeeded: version.MustParseRange("<58"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MustParseRange("<12.1"),
+		SamsungMobileNeeded: version.MustParseRange("<10.0"),
+	},
+)
+
+var RequestAnimationFrame = types.NewPolyfill(
+	 RequestAnimationFrame_Code,
+	 []*types.Polyfill{  Date_now,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.MakeEqualsMajor(version.MustParse("7")),
+		ChromeNeeded: version.MustParseRange("<46"),
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("3.6"))).AND(version.MakeLTE(version.MustParse("22"))),
+		FirefoxMobileNeeded: version.MakeEqualsMajorMinor(version.MustParse("3.6")),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("9"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.Range(version.MakeGTE(version.MustParse("3.2"))).AND(version.MakeLTE(version.MustParse("6"))),
+		OperaNeeded: version.MustParseRange("<15"),
+		OperaMiniNeeded: version.Range(version.MakeGTE(version.MustParse("5"))).AND(version.All),
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("3.1"))).AND(version.MakeLTE(version.MustParse("6"))),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var RequestIdleCallback = types.NewPolyfill(
+	 RequestIdleCallback_Code,
+	 []*types.Polyfill{  Object_defineProperty,  Array_prototype_filter,  Array_prototype_includes,  RequestAnimationFrame,  Performance_now,  Event,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<47"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<55"),
+		FirefoxMobileNeeded: version.MustParseRange("<55"),
+		IENeeded: version.All,
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.MustParseRange("<34"),
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		SamsungMobileNeeded: version.MustParseRange("<5"),
+	},
+)
+
+var Screen_orientation = types.NewPolyfill(
+	 Screen_orientation_Code,
+	 []*types.Polyfill{  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.MustParseRange("<5"),
+		BBNeeded: version.All,
+		ChromeNeeded: version.MustParseRange("<49"),
+		EdgeNeeded: version.All,
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.MustParseRange("<30"),
+		FirefoxMobileNeeded: version.MustParseRange("<30"),
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.All,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.MustParseRange("<25"),
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var SetImmediate = types.NewPolyfill(
+	 SetImmediate_Code,
+	 []*types.Polyfill{  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.All,
+		ChromeNeeded: version.All,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.All,
+		FirefoxMobileNeeded: version.All,
+		IENeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("9"))),
+		IEMobileNeeded: version.MustParseRange("<10"),
+		IOSChromeNeeded: version.All,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.All,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.All,
+	},
+)
+
+var Smoothscroll = types.NewPolyfill(
+	 Smoothscroll_Code,
+	 []*types.Polyfill{  RequestAnimationFrame,  Function_prototype_bind,  GetComputedStyle,  Object_defineProperty,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.All,
+		BBNeeded: version.None,
+		ChromeNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("60"))),
+		EdgeNeeded: version.Range(version.All).AND(version.MakeLTE(version.MustParse("76"))),
+		EdgeMobileNeeded: version.All,
+		FirefoxNeeded: version.Range(version.MakeGTE(version.MustParse("4"))).AND(version.MakeLTE(version.MustParse("36"))),
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IEMobileNeeded: version.Range(version.MakeGTE(version.MustParse("9"))).AND(version.All),
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.All,
+		OperaNeeded: version.All,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.All,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var __html5_elements = types.NewPolyfill(
+	 __html5_elements_Code,
+	 []*types.Polyfill{  Document,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("9"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.MakeEqualsMajor(version.MustParse("4")),
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+var __viewport = types.NewPolyfill(
+	 __viewport_Code,
+	 []*types.Polyfill{  Object_defineProperties,  },
+	 types.SupportMatrix{ 
+		AndroidNeeded: version.None,
+		BBNeeded: version.None,
+		ChromeNeeded: version.None,
+		EdgeNeeded: version.None,
+		EdgeMobileNeeded: version.None,
+		FirefoxNeeded: version.None,
+		FirefoxMobileNeeded: version.None,
+		IENeeded: version.Range(version.MakeGTE(version.MustParse("6"))).AND(version.MakeLTE(version.MustParse("8"))),
+		IEMobileNeeded: version.None,
+		IOSChromeNeeded: version.None,
+		IOSSafariNeeded: version.None,
+		OperaNeeded: version.None,
+		OperaMiniNeeded: version.None,
+		SafariNeeded: version.None,
+		SamsungMobileNeeded: version.None,
+	},
+)
+
+
+var polyfillsByName = map[string]*types.Polyfill{
 
 	"AbortController": AbortController,
 	"Array.from": Array_from,

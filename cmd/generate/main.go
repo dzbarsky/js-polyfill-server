@@ -12,6 +12,8 @@ import (
 
 	"github.com/BurntSushi/toml"
 	"github.com/evanw/esbuild/pkg/api"
+
+	"js-polyfill-server/version"
 )
 
 var (
@@ -31,15 +33,19 @@ const {{var .Name}}_Code = {{printf "%q" .Code}}
 {{ end }}
 `))
 	polyTmpl = template.Must(template.New("poly").Funcs(funcs).Parse(`package polyfill
+import "js-polyfill-server/version"
+import "js-polyfill-server/types"
 {{ range . }}
-var {{var .Name}} = &Polyfill{
-	code: {{var .Name}}_Code,
-	deps: []*Polyfill{ {{range .Conf.Deps}} {{var .}}, {{end}} },
-	versions: LastVersionBeforeSupport{},
-}
+var {{var .Name}} = types.NewPolyfill(
+	 {{var .Name}}_Code,
+	 []*types.Polyfill{ {{range .Conf.Deps}} {{var .}}, {{end}} },
+	 types.SupportMatrix{ {{range $k, $v := .Conf.Versions}}
+		{{$k}}Needed: {{$v}},{{end}}
+	},
+)
 {{ end }}
 
-var polyfillsByName = map[string]*Polyfill{
+var polyfillsByName = map[string]*types.Polyfill{
 {{ range . }}
 	"{{.Name}}": {{var .Name}},{{end}}
 }
@@ -53,38 +59,93 @@ type polyfill struct {
 }
 
 type polyfillConfig struct {
-	Deps              []string
-	FirefoxMinVersion int
-	ChromeMinVersion  int
+	Deps     []string
+	Versions map[string]string
+}
+
+func intervalString(fn string, version string) string {
+	switch version {
+	case "":
+		return "version.None"
+	case "*":
+		return "version.All"
+	}
+
+	return fmt.Sprintf(`%s(version.MustParse("%s"))`, fn, version)
+}
+
+func rangeString(s string) string {
+	switch s {
+	case "":
+		return "version.None"
+	case "*":
+		return "version.All"
+	}
+
+	parts := strings.Split(s, "-")
+	if len(parts) == 2 {
+		return fmt.Sprintf("version.Range(%s).AND(%s)",
+			intervalString("version.MakeGTE", strings.TrimSpace(parts[0])),
+			intervalString("version.MakeLTE", strings.TrimSpace(parts[1])),
+		)
+	}
+
+	v, err := version.Parse(s)
+	if err != nil {
+		// Assume it's a semver-ish range
+		return fmt.Sprintf(`version.MustParseRange("%s")`, s)
+	}
+	if v.Patch != 0 {
+		return fmt.Sprintf(`version.MakeEqualsFull(version.MustParse("%s"))`, s)
+	}
+	if v.Minor != 0 {
+		return fmt.Sprintf(`version.MakeEqualsMajorMinor(version.MustParse("%s"))`, s)
+	}
+	return fmt.Sprintf(`version.MakeEqualsMajor(version.MustParse("%s"))`, s)
 }
 
 func fromTOML(in polyfillTOMLConfig) polyfillConfig {
+	r := rangeString
 	return polyfillConfig{
 		Deps: in.Deps,
+		Versions: map[string]string{
+			"Android":       r(in.Browsers.Android),
+			"BB":            r(in.Browsers.BB),
+			"Chrome":        r(in.Browsers.Chrome),
+			"Edge":          r(in.Browsers.Edge),
+			"EdgeMobile":    r(in.Browsers.EdgeMobile),
+			"Firefox":       r(in.Browsers.Firefox),
+			"IOSChrome":     r(in.Browsers.IOSChrome),
+			"IOSSafari":     r(in.Browsers.IOSSafari),
+			"IE":            r(in.Browsers.IE),
+			"IEMobile":      r(in.Browsers.IEMobile),
+			"Opera":         r(in.Browsers.Opera),
+			"OperaMini":     r(in.Browsers.OperaMini),
+			"Safari":        r(in.Browsers.Safari),
+			"FirefoxMobile": r(in.Browsers.FirefoxMobile),
+			"SamsungMobile": r(in.Browsers.SamsungMobile),
+		},
 	}
 }
 
 type polyfillTOMLConfig struct {
 	Deps     []string `toml:"dependencies"`
 	Browsers struct {
-		Firefox string `toml:"firefox"`
-		Chrome  string `toml:"chrome"`
-		// TODO(dave): support the rest of these
-		/*android = "<5"
-		bb = "*"
-		chrome = "<54"
-		edge = "<17"
-		edge_mob = "<17"
-		firefox = "<49"
-		ios_chr = "*"
-		ios_saf = "<10"
-		ie = "6 - *"
-		ie_mob = "10 - *"
-		opera = "<39"
-		op_mini = "*"
-		safari = "<10"
-		firefox_mob = "<49"
-		samsung_mob = "<6"*/
+		Android       string `toml:"android"`
+		BB            string `toml:"bb"`
+		Chrome        string `toml:"chrome"`
+		Edge          string `toml:"edge"`
+		EdgeMobile    string `toml:"edge_mob"`
+		Firefox       string `toml:"firefox"`
+		IOSChrome     string `toml:"ios_chr"`
+		IOSSafari     string `toml:"ios_saf"`
+		IE            string `toml:"ie"`
+		IEMobile      string `toml:"ie_mob"`
+		Opera         string `toml:"opera"`
+		OperaMini     string `toml:"op_mini"`
+		Safari        string `toml:"safari"`
+		FirefoxMobile string `toml:"firefox_mob"`
+		SamsungMobile string `toml:"samsung_mob"`
 	} `toml:"browsers"`
 }
 
