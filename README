@@ -9,6 +9,34 @@ Why? There are 3 ways of using the current implementation:
 This project is intended to help with use-case (3). It can serve all polyfills for a request in under 0.4ms. Actually, all the time is taken to parse the UA string, so a future update may make it even cheaper.
 It can be used as either a library in-process, or as a standalone server.
 
+Note: This repo currently does not handle the following polyfills:
+- Intl.RelativeTimeFormat
+- MutationObserver
+- HTMLTemplateElement
+- smoothscroll
+- Intl.Locale
+- Intl.DateTimeFormat
+- UserTiming
+- fetch
+- AudioContext
+- ~html5-elements
+- _TypedArray
+- atob
+- Intl.DisplayNames
+- ResizeObserver
+- Intl.PluralRules
+- Intl.NumberFormat
+- Intl.getCanonicalLocales
+- AbortController
+- EventSource
+- String.prototype.normalize
+- JSON
+- WebAnimations
+- HTMLPictureElement
+- Intl.ListFormat
+
+I am happy to add support if there is interest. Just mention in an issue.
+
 Future nice to haves:
 1. parse JS to figure out what polyfills are needed
 2. Think if we want to use ESbuild to bundle the polyfill (could maybe cut down on size)
