@@ -1,13 +1,14 @@
 This is basically a go implementation of https://github.com/Financial-Times/polyfill-service
 
 Why? There are 3 ways of using the current implementation:
-1. Use polyfill.io. If you depend on any polyfill code to render your page, you delay page rendering by the time of the call to the service (hundreds of milliseconds)
-2. Use polyfill.io, but run client-side checks to see if you need any polyfills to avoid blocking your render in the common case (recent browser). This is complex to maintain and can still be slow if you do need any polyfills.
-3. Run polyfill-service yourself. This comes with pretty high overhead - generating the polyfill bundle in-process easily takes 50ms+ even for just a few polyfills, and a minimum of 15ms or so for just a single one. If you do not embed the library in your process directly, the overhead is even higher.
+1. Use polyfill.io from the client. If you depend on any polyfill code to render your page, you delay page rendering by the time of the call to the service (hundreds of milliseconds)
+2. Use polyfill.io from the client, but run checks to see if you need any polyfills to avoid blocking your render in the common case (recent browser). This is complex to maintain and can still be slow if you do need any polyfills.
+3. Run polyfill-service yourself and grab the polyfill from the server. This avoid all client-side render blocking, but still comes with pretty high overhead - generating the polyfill bundle in-process easily takes 50ms+ even for just a few polyfills, and a minimum of 15ms or so for just a single one. If you do not embed the library in your process directly, the overhead is even higher.
   While slowing down page loads by 50ms+ isn't the end of the world, it is definitely measureable, and the resource consumption on the server side isn't free either.
 
 This project is intended to help with use-case (3). It can serve all polyfills for a request in under 0.4ms. Actually, all the time is taken to parse the UA string, so a future update may make it even cheaper.
-It can be used as either a library in-process, or as a standalone server.
+It can be used as either a library in-process, or as a standalone server. Your web server can generate a request to it and inline the results to avoid all blocking.
+You can also have your web server inline a script tag that will fetch the results, if you want to leverage the browser cache. Or a combination of these strategies depending on polyfill size.
 
 Note: This repo currently does not handle the following polyfills:
 - Intl.RelativeTimeFormat
