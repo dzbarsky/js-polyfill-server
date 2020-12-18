@@ -149,6 +149,15 @@ type polyfillTOMLConfig struct {
 	} `toml:"browsers"`
 }
 
+func minify(data []byte) string {
+	result := api.Transform(string(data), api.TransformOptions{
+		MinifyWhitespace:  true,
+		MinifyIdentifiers: true,
+		MinifySyntax:      true,
+	})
+	return string(result.Code)
+}
+
 func main() {
 	workDir, err := ioutil.TempDir("", "polyfill")
 	if err != nil {
@@ -204,12 +213,7 @@ func main() {
 				if err != nil {
 					panic(err)
 				}
-				result := api.Transform(string(data), api.TransformOptions{
-					MinifyWhitespace:  true,
-					MinifyIdentifiers: true,
-					MinifySyntax:      true,
-				})
-				codes[name()] = string(result.Code)
+				codes[name()] = minify(data)
 			}
 		}
 	}
@@ -218,8 +222,14 @@ func main() {
 	for name, conf := range confs {
 		code, ok := codes[name]
 		if !ok {
-			// TODO(dave): we need to build these, but it's more complicated :(
-			fmt.Println(name + " code not found!")
+			// TODO(dave): we need to build these from the node_modules, but it's more complicated :(
+			// For now, just get fetch working
+			data, err := ioutil.ReadFile(filepath.Join("cmd", "generate", name+".js"))
+			if err != nil {
+				fmt.Println(name + " code not found!")
+			} else {
+				code = minify(data)
+			}
 		}
 		polyfills = append(polyfills, polyfill{
 			Name: name,
