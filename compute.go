@@ -2,6 +2,7 @@ package polyfill
 
 import (
 	"errors"
+	"fmt"
 	"io"
 	"strings"
 
@@ -27,13 +28,22 @@ func (c *Composer) parse(userAgent string) (browser types.Browser, v version.Ver
 	switch ua.Family {
 	case "Firefox":
 		browser = types.Firefox
-	case "Chrome":
+	case "Firefox Mobile":
+		browser = types.FirefoxMobile
+	case "Chrome", "Chrome Mobile":
 		browser = types.Chrome
 	case "Safari":
 		browser = types.Safari
+	case "Safari Mobile":
+		browser = types.IOSSafari
 	case "IE":
 		browser = types.IE
+	case "Edge":
+		browser = types.Edge
+	case "Edge Mobile":
+		browser = types.EdgeMobile
 	default:
+		fmt.Println("Unrecognized browser family: ", ua.Family)
 		err = errors.New("Unrecognized browser")
 		return
 	}
@@ -65,10 +75,10 @@ func includeWithDeps(
 		return codes
 	}
 	taken[p] = struct{}{}
-	p.ForEachDep(func(d *types.Polyfill) {
-		codes = includeWithDeps(d, taken, codes, needed)
-	})
 	if needed(p) {
+		p.ForEachDep(func(d *types.Polyfill) {
+			codes = includeWithDeps(d, taken, codes, needed)
+		})
 		codes = append(codes, p.Code())
 	}
 	return codes
@@ -94,4 +104,13 @@ func (c *Composer) Polyfills(userAgent string, polyfills []*types.Polyfill) io.R
 	}
 
 	return io.MultiReader(codes...)
+}
+
+func name(p *types.Polyfill) string {
+	for k, v := range polyfillsByName {
+		if v == p {
+			return k
+		}
+	}
+	panic("unknown polyfill")
 }
