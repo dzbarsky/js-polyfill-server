@@ -7,8 +7,8 @@ import (
 
 	"github.com/ua-parser/uap-go/uaparser"
 
-	"js-polyfill-server/types"
-	"js-polyfill-server/version"
+	"github.com/dzbarsky/js-polyfill-server/types"
+	"github.com/dzbarsky/js-polyfill-server/version"
 )
 
 func New() *Composer {

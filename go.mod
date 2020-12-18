@@ -1,4 +1,4 @@
-module js-polyfill-server
+module github.com/dzbarsky/js-polyfill-server
 
 go 1.15
 

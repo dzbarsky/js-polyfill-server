@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 	"testing"
 
-	polyfill "js-polyfill-server"
-	"js-polyfill-server/types"
+	polyfill "github.com/dzbarsky/js-polyfill-server"
+	"github.com/dzbarsky/js-polyfill-server/types"
 )
 
 var r []byte

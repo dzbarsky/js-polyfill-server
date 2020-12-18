@@ -4,7 +4,7 @@ import (
 	"io"
 	"strings"
 
-	"js-polyfill-server/version"
+	"github.com/dzbarsky/js-polyfill-server/version"
 )
 
 type Browser int
