@@ -30,11 +30,11 @@ func (c *Composer) parse(userAgent string) (browser types.Browser, v version.Ver
 		browser = types.Firefox
 	case "Firefox Mobile":
 		browser = types.FirefoxMobile
-	case "Chrome", "Chrome Mobile":
+	case "Chrome", "Chrome Mobile", "Chrome Mobile WebView":
 		browser = types.Chrome
 	case "Safari":
 		browser = types.Safari
-	case "Safari Mobile":
+	case "Mobile Safari", "Chrome Mobile iOS", "Firefox iOS":
 		browser = types.IOSSafari
 	case "IE":
 		browser = types.IE
