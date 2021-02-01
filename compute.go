@@ -8,8 +8,8 @@ import (
 
 	"github.com/ua-parser/uap-go/uaparser"
 
-	"github.com/dzbarsky/js-polyfill-server/types"
-	"github.com/dzbarsky/js-polyfill-server/version"
+	"github.com/lytic-health/js-polyfill-server/types"
+	"github.com/lytic-health/js-polyfill-server/version"
 )
 
 func New() *Composer {

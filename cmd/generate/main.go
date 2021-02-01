@@ -13,7 +13,7 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/evanw/esbuild/pkg/api"
 
-	"github.com/dzbarsky/js-polyfill-server/version"
+	"github.com/lytric-health/js-polyfill-server/version"
 )
 
 var (
@@ -33,8 +33,8 @@ const {{var .Name}}_Code = {{printf "%q" .Code}}
 {{ end }}
 `))
 	polyTmpl = template.Must(template.New("poly").Funcs(funcs).Parse(`package polyfill
-import "github.com/dzbarsky/js-polyfill-server/version"
-import "github.com/dzbarsky/js-polyfill-server/types"
+import "github.com/lytic-health/js-polyfill-server/version"
+import "github.com/lytic-health/js-polyfill-server/types"
 {{ range . }}
 var {{var .Name}} = types.NewPolyfill(
 	 {{var .Name}}_Code,

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	polyfill "github.com/dzbarsky/js-polyfill-server"
+	polyfill "github.com/lytic-health/js-polyfill-server"
 )
 
 func Handler() func(w http.ResponseWriter, r *http.Request) {

@@ -1,6 +1,6 @@
 package polyfill
-import "github.com/dzbarsky/js-polyfill-server/version"
-import "github.com/dzbarsky/js-polyfill-server/types"
+import "github.com/lytic-health/js-polyfill-server/version"
+import "github.com/lytic-health/js-polyfill-server/types"
 
 var AbortController = types.NewPolyfill(
 	 AbortController_Code,

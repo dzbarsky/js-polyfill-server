@@ -4,7 +4,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/dzbarsky/js-polyfill-server/version"
+	"github.com/lytic-health/js-polyfill-server/version"
 )
 
 type Browser int

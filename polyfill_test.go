@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 	"testing"
 
-	polyfill "github.com/dzbarsky/js-polyfill-server"
-	"github.com/dzbarsky/js-polyfill-server/types"
+	polyfill "github.com/lytic-health/js-polyfill-server"
+	"github.com/lytic-health/js-polyfill-server/types"
 )
 
 var polyfills = []*types.Polyfill{
