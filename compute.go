@@ -26,6 +26,13 @@ func (c *Composer) parse(userAgent string) (browser types.Browser, v version.Ver
 	// TODO(can we stick to just pulling out major/minor/patch and avoid this slow parse?)
 	ua := c.uaParser.ParseUserAgent(userAgent)
 	switch ua.Family {
+	case "Facebook":
+		if c.uaParser.ParseOs(userAgent).Family == "iOS" {
+			browser = types.IOSSafari
+		}
+		if c.uaParser.ParseOs(userAgent).Family == "Android" {
+			browser = types.Chrome
+		}
 	case "Firefox":
 		browser = types.Firefox
 	case "Firefox Mobile":
